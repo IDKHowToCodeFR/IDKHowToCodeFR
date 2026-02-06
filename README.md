@@ -26,14 +26,6 @@
 
 ---
 
-### 📊 GitHub Stats
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=IDKHowToCodeFR&show_icons=true&theme=tokyonight&count_private=true" alt="Rachit's Stats" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=IDKHowToCodeFR&layout=compact&theme=tokyonight" alt="Top Languages" />
-</p>
-
----
-
 ### 📂 Featured Projects
 - 🔭 **[Crowd Monitoring CV](https://github.com/IDKHowToCodeFR/Crowd-Monitoring):** YOLOv8 + Optical Flow for tracking groups in dense footage.
 - 🤖 **[CodeBot](https://github.com/IDKHowToCodeFR/Code-Bot):** A Discord assistant using Cohere API for real-time debugging.
@@ -41,6 +33,3 @@
 
 ---
 
-### 📫 Get in Touch
-- **LinkedIn:** [in/rachit-mangawa](https://www.linkedin.com/in/rachit-mangawa/)
-- **Email:**[](mangawa.rachit701@gmial.com)**
