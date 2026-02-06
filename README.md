@@ -5,17 +5,17 @@
 <!-- You can replace this URL with your own banner image -->
 <!--![Profile Banner](https://drive.google.com/uc?export=view&id=1wNrXallxzwth50tdECoORZ60k38ZzmwJ)-->
 
-# 👋 Hey there, I'm **IDKWhoIAm** ![Visitors](https://komarev.com/ghpvc/?username=IDKHowToCodeFR&label=Profile%20views&color=0e75b6&style=for-the-badge)
+# 👋 Hey there, I'm **Rachit Mangawa** ![Visitors](https://komarev.com/ghpvc/?username=IDKHowToCodeFR&label=Profile%20views&color=0e75b6&style=for-the-badge)
 
 
 ### 🚀 About Me
 - 🎓 Student at **Netaji Subhas University of Technology**
-- 👨‍💻 Passionate about **Something IDK**
-- 🌱 Currently learning: `Nothing`
+- 👨‍💻 Passionate about **Machine Learning and AI**
+- 🌱 Currently learning: `Kaggle`
 <!-- - 🤝 Looking to collaborate on exciting projects-->
 - 📫 Reach out via [Email](mailto:mangawa.rachit701@gmail.com)
 - 😄 Pronouns: He/Him 
-- ⚡ Fun fact: I debug faster than I cook Maggi! `Its a lie btw`
+- ⚡ Fun fact: I debug faster than I cook Maggi! `Thats a lie btw`
 
 ---
 
