@@ -1,6 +1,16 @@
+
+
 <div align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=32&pause=1000&color=A78BFA&center=true&vCenter=true&width=800&lines=Rachit+Mangawa;Machine+Learning;Artificial+Intelligence;Systems+Development" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.herokuapp.com?size=25&center=true&vCenter=true&width=600&lines=Rachit+Mangawa;Machine+Learning;Artificial+Intelligence;Natural+Language+Processing" alt="Typing SVG" />
 </div>
+
+
+<!-- <p align="center">
+  <img src="https://komarev.com/ghpvc/?username=IDKHowToCodeFR&label=Profile%20views&color=blue&style=flat" />
+</p> -->
+
+---
+## Connect With Me
 
 <div align="center">
 
