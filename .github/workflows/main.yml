@@ -27,10 +27,10 @@ jobs:
           token: ${{ secrets.METRICS_TOKEN }}
 
           # Options
-          user: i-win-again 
+          user: IDKHowToPlayFR 
           template: classic
           base: header, activity, community, repositories, metadata
-          config_display: large
+          config_display: columns
           config_octicon: yes
           config_timezone: Asia/Calcutta
           config_twemoji: yes
