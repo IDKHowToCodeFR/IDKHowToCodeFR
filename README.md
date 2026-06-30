@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="http://readme-typing-svg.herokuapp.com?font=Honk&size=100&duration=4000&pause=1000&color=F7F7F7&center=true&vCenter=true&width=1000&height=100&lines=Rachit+Mangawa;CSAI+Undergrad;AI+%26+ML+Explorer" alt="Rachit Mangawa" />
+  <img src="http://readme-typing-svg.herokuapp.com?font=Honk&size=100&duration=750&pause=4000&color=F7F7F7&center=true&vCenter=true&width=1000&height=100&lines=Rachit+Mangawa;CSAI+Undergrad;AI+%26+ML+Explorer" alt="Rachit Mangawa" />
 </div>
 
 <div align="center">
@@ -42,6 +42,11 @@ B.Tech Computer Science & Artifical Intelligence (CSAI) student. Engaged in the 
   </p>
 </div>
 -->
+
+
+<div align="center">
+  <img src="http://readme-typing-svg.herokuapp.com?font=Black+Ops+One&size=50&duration=1&pause=400000&color=F7F7F7&center=true&vCenter=true&width=1000&height=50&lines=TECH+STACK" alt="Tech Stack" />
+</div>
 
 <p align="center">
   <a href="https://skillicons.dev">
@@ -106,8 +111,11 @@ Analysis of zero-shot intent classification capabilities. Constructed a pipeline
 <img height="160" src="https://github-readme-stats.vercel.app/api/top-langs/?username=IDKHowToCodeFR&layout=compact&theme=tokyonight&hide_border=true&langs_count=6" />
 
 </div>
+
+
+<div align="center">
+  <img src="http://readme-typing-svg.herokuapp.com?font=Black+Ops+One&size=50&duration=1&pause=400000&color=F7F7F7&center=true&vCenter=true&width=1000&height=50&lines=METRICS" alt="Metrics" />
+</div>
+
 -->
-
-
-
-<img src="/github-metrics.svg" alt="Metrics" width="100%">
+<img src="/github-metrics.svg" alt="METRICS" width="100%">
