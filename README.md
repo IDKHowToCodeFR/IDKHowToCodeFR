@@ -49,14 +49,15 @@ B.Tech Computer Science & Artifical Intelligence (CSAI) student. Engaged in the 
 
 <div align="center">
   <!-- 
-  Black+Opus+One
+  Black+Ops+One
   Agu+Display
   Sankofa+Display
   Rubik+Doodle+Shadow
   Nabla
   Rubik+Glitch
+  Stick
   -->
-  <img src="http://readme-typing-svg.herokuapp.com?font=Stick&size=50&duration=1&pause=400000&color=F7F7F7&center=true&vCenter=true&width=1000&height=50&lines=TECH‎+STACK" alt="Tech Stack" />
+  <img src="http://readme-typing-svg.herokuapp.com?font=Black+Ops+One&size=50&duration=1&pause=400000&color=F7F7F7&center=true&vCenter=true&width=1000&height=50&lines=TECH‎+STACK" alt="Tech Stack" />
 </div>
 
 <p align="center">
