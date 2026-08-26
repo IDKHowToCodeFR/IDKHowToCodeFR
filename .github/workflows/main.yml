@@ -17,7 +17,6 @@ jobs:
           user: IDKHowToCodeFR
           template: classic
           base: header, activity, community, repositories, metadata
-          base_skip: no
           config_timezone: Asia/Calcutta
           config_display: large
           config_octicon: yes
