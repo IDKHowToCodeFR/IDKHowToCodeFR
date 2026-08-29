@@ -47,7 +47,7 @@ B.Tech Computer Science & Artifical Intelligence (CSAI) student. Engaged in the 
 -->
 
 
-<div align="center">
+<div  align="center">
   <!-- 
   Black+Ops+One
   Agu+Display
