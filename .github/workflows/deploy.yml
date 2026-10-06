@@ -21,6 +21,7 @@ jobs:
         uses: xu-cheng/latex-action@v3
         with:
           root_file: resume.tex
+          working_directory: portfolio
           
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -32,7 +33,7 @@ jobs:
       - name: Copy Resume to Public folder
         run: |
           mkdir -p portfolio/public
-          cp resume.pdf portfolio/public/resume.pdf
+          cp portfolio/resume.pdf portfolio/public/resume.pdf
 
       - name: Install dependencies
         working-directory: ./portfolio
