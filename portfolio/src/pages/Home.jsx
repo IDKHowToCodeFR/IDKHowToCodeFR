@@ -11,7 +11,7 @@ export default function Home() {
     <main className="relative z-10 w-full overflow-hidden">
 
       {/* Stacked Hero Section */}
-      <section className="relative min-h-[100dvh] flex flex-col justify-center w-full max-w-[1400px] mx-auto px-6 md:px-12 pt-32 pb-16">
+      <section className="relative min-h-dvh flex flex-col justify-center w-full max-w-350 mx-auto px-6 md:px-12 pt-32 pb-16">
 
         <div className="reveal w-full max-w-5xl">
           <h1 className="text-[16vw] md:text-[10vw] leading-[0.8] font-medium tracking-tighter text-white mb-12">
@@ -53,7 +53,7 @@ export default function Home() {
           <Link to="/experience" className="text-sm font-medium tracking-widest uppercase text-white/50 hover:text-white transition-colors pb-2">View All &rarr;</Link>
         </div>
 
-        <div className="ml-[24px] md:ml-[28px] border-l border-white/10 flex flex-col gap-24">
+        <div className="ml-6 md:ml-7 border-l border-white/10 flex flex-col gap-24">
 
           {/* UIDAI */}
           <div className="relative reveal reveal-delay-1 pl-8 md:pl-10">
@@ -66,7 +66,7 @@ export default function Home() {
               <h3 className="text-xl md:text-2xl font-medium text-white mb-3">Unique Identification Authority of India (UIDAI / Aadhaar)</h3>
               <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
                 <h4 className="text-xl text-white/70 font-medium">Software Developer Intern</h4>
-                <span className="text-xs tracking-[0.2em] uppercase text-white/40 font-bold flex-shrink-0 bg-white/5 px-4 py-2 rounded-full border border-white/10">Jun 2026 — Sep 2026</span>
+                <span className="text-xs tracking-[0.2em] uppercase text-white/40 font-bold shrink-0 bg-white/5 px-4 py-2 rounded-full border border-white/10">Jun 2026 — Sep 2026</span>
               </div>
             </div>
 
@@ -81,7 +81,7 @@ export default function Home() {
 
             <div className="flex flex-wrap gap-3 mt-8">
               {['Python', 'FastAPI', 'Ollama', 'Plotly Dash', 'Pandas / NumPy', 'WebSockets', 'SQLite WAL'].map(tag => (
-                <span key={tag} className="text-xs text-white/70 px-4 py-2 rounded-full bg-white/5 border border-white/10 tracking-[0.1em] font-medium">{tag}</span>
+                <span key={tag} className="text-xs text-white/70 px-4 py-2 rounded-full bg-white/5 border border-white/10 tracking-widest font-medium">{tag}</span>
               ))}
             </div>
           </div>
@@ -90,7 +90,7 @@ export default function Home() {
       </section>
 
       {/* Featured Project Section */}
-      <section className="mb-32 w-full max-w-[1400px] mx-auto px-6 md:px-12">
+      <section className="mb-32 w-full max-w-350 mx-auto px-6 md:px-12">
         <div className="flex items-end justify-between mb-12 reveal">
           <h2 className="text-4xl md:text-5xl font-medium tracking-tight text-white">Featured Work</h2>
           <Link to="/projects" className="text-sm font-medium tracking-widest uppercase text-white/50 hover:text-white transition-colors pb-2">View All &rarr;</Link>
@@ -111,7 +111,7 @@ export default function Home() {
                 </div>
                 <MagneticButton href="/projects" isInternal>View Architecture</MagneticButton>
               </div>
-              <div className="flex items-center justify-center relative w-full h-full min-h-[300px]">
+              <div className="flex items-center justify-center relative w-full h-full min-h-75">
                 <TranspilerVisual />
               </div>
             </div>
@@ -199,9 +199,9 @@ export default function Home() {
                   Fixed the imputed gradient value deep inside the C++/Python <code className="font-mono text-white/70 text-xs">math_grad.py</code> layer and wrote comprehensive regression tests to prevent future silent NaN/Inf downstream errors in model training.
                 </p>
                 <div className="flex flex-wrap gap-2">
-                  <span className="text-[10px] text-white/70 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 tracking-[0.1em] uppercase font-bold">Python</span>
-                  <span className="text-[10px] text-white/70 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 tracking-[0.1em] uppercase font-bold">C++</span>
-                  <span className="text-[10px] text-white/70 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 tracking-[0.1em] uppercase font-bold">Calculus</span>
+                  <span className="text-[10px] text-white/70 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 tracking-widest uppercase font-bold">Python</span>
+                  <span className="text-[10px] text-white/70 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 tracking-widest uppercase font-bold">C++</span>
+                  <span className="text-[10px] text-white/70 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 tracking-widest uppercase font-bold">Calculus</span>
                 </div>
               </div>
             </div>

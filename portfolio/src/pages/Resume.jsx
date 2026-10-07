@@ -15,8 +15,8 @@ export default function Resume() {
       <div className="w-full max-w-5xl mx-auto px-6 md:px-12 reveal reveal-delay-1 flex flex-col items-center">
         
         {/* PDF Viewer Container - Hidden on mobile where object tags fail */}
-        <div className="hidden md:block w-full h-[70vh] md:h-[85vh] bg-white/5 ring-1 ring-white/10 rounded-[2rem] overflow-hidden p-2 mb-12">
-          <div className="w-full h-full rounded-[calc(2rem-0.5rem)] overflow-hidden bg-black/50">
+        <div className="hidden md:block w-full h-[70vh] md:h-[85vh] bg-white/5 ring-1 ring-white/10 rounded-4xl overflow-hidden p-2 mb-12">
+          <div className="w-full h-full rounded-3xl overflow-hidden bg-black/50">
             <object 
               data="./resume.pdf" 
               type="application/pdf" 
