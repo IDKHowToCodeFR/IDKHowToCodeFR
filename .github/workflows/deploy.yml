@@ -16,12 +16,6 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-
-      - name: Compile LaTeX resume
-        uses: xu-cheng/latex-action@v3
-        with:
-          root_file: resume.tex
-          working_directory: portfolio
           
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -29,11 +23,6 @@ jobs:
           node-version: '20'
           cache: 'npm'
           cache-dependency-path: portfolio/package-lock.json
-
-      - name: Copy Resume to Public folder
-        run: |
-          mkdir -p portfolio/public
-          cp portfolio/resume.pdf portfolio/public/resume.pdf
 
       - name: Install dependencies
         working-directory: ./portfolio
