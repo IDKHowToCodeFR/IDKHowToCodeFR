@@ -1,19 +1,21 @@
 import React, { useRef, useEffect } from 'react';
-import { PremiumCard, MagneticButton, useReveal } from '../components/UI';
+import { PremiumCard, MagneticButton, useReveal, TranspilerVisual } from '../components/UI';
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useReducedMotion } from "motion/react";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Projects() {
   const wrap = useRef(null);
   const track = useRef(null);
-  const reduce = useReducedMotion();
 
   useEffect(() => {
-    if (reduce || !wrap.current || !track.current) return;
-    const ctx = gsap.context(() => {
+    if (!wrap.current || !track.current) return;
+    
+    let mm = gsap.matchMedia();
+
+    // Only run GSAP horizontal scroll on desktop screens with no reduced motion preference
+    mm.add("(min-width: 768px) and (prefers-reduced-motion: no-preference)", () => {
       const distance = track.current.scrollWidth - window.innerWidth;
       gsap.to(track.current, {
         x: -distance,
@@ -27,9 +29,10 @@ export default function Projects() {
           invalidateOnRefresh: true,
         },
       });
-    }, wrap);
-    return () => ctx.revert();
-  }, [reduce]);
+    });
+
+    return () => mm.revert();
+  }, []);
 
   return (
     <main className="relative z-10 w-full min-h-[100dvh] bg-[#020202]">
@@ -43,17 +46,17 @@ export default function Projects() {
         </p>
       </section>
 
-      {/* The pinned horizontal scroll section */}
-      <section ref={wrap} className="relative overflow-hidden bg-[#020202]">
-        <div ref={track} className="flex h-[100dvh] items-center px-12 md:px-32 gap-32 w-max">
+      {/* The horizontal scroll section (native CSS scroll on mobile, pinned GSAP on desktop) */}
+      <section ref={wrap} className="relative overflow-x-auto md:overflow-hidden snap-x snap-mandatory bg-[#020202]">
+        <div ref={track} className="flex min-h-[100dvh] items-center px-6 md:px-32 py-16 md:py-0 gap-8 md:gap-32 w-max">
           
           {/* Project 1 */}
-          <div className="w-[85vw] md:w-[65vw] max-w-5xl shrink-0">
+          <div className="w-[85vw] md:w-[65vw] max-w-5xl shrink-0 snap-center">
             <PremiumCard>
               <div className="grid lg:grid-cols-2 gap-12 items-center">
                 <div>
                   <h3 className="text-4xl md:text-6xl font-medium tracking-tight mb-6">HeartFlow OS</h3>
-                  <p className="text-white/50 text-xl leading-relaxed mb-8">
+                  <p className="text-white/70 text-xl leading-relaxed mb-8">
                     AST transpiler compiling Scikit-Learn models into zero-dependency, malloc-free C headers for ESP32/Cortex-M deployment. Engineered INT8 quantization engine, cutting microcontroller flash footprint by ~75%.
                   </p>
                   <div className="flex flex-wrap gap-2 mb-12">
@@ -63,24 +66,15 @@ export default function Projects() {
                   </div>
                   <MagneticButton href="https://github.com/IDKHowToCodeFR/HEARTFLOW_OS">View Source Code</MagneticButton>
                 </div>
-                <div className="bg-[#050505] rounded-2xl aspect-square flex items-center justify-center border border-white/10 p-8 overflow-hidden relative group">
-                  <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-                  <pre className="text-xs md:text-sm text-blue-300/70 font-mono w-full text-left">
-                    <code>
-                      <span className="text-purple-400">export function</span> quantize(model) {'{\n'}
-                      {'  '}const weights = model.getWeights();{'\n'}
-                      {'  '}<span className="text-gray-500">// Compress to INT8</span>{'\n'}
-                      {'  '}return optimizeAST(weights);{'\n'}
-                      {'}'}
-                    </code>
-                  </pre>
+                <div className="flex items-center justify-center relative w-full h-full min-h-[300px]">
+                  <TranspilerVisual />
                 </div>
               </div>
             </PremiumCard>
           </div>
 
           {/* Project 2 */}
-          <div className="w-[85vw] md:w-[65vw] max-w-5xl shrink-0">
+          <div className="w-[85vw] md:w-[65vw] max-w-5xl shrink-0 snap-center">
             <PremiumCard>
               <div className="grid lg:grid-cols-2 gap-12 items-center">
                 <div className="bg-[#050505] rounded-2xl aspect-square flex items-center justify-center border border-white/10 p-8 overflow-hidden relative group order-2 lg:order-1">
@@ -93,7 +87,7 @@ export default function Projects() {
                 </div>
                 <div className="order-1 lg:order-2">
                   <h3 className="text-4xl md:text-6xl font-medium tracking-tight mb-6">Semantic Analyzer</h3>
-                  <p className="text-white/50 text-xl leading-relaxed mb-8">
+                  <p className="text-white/70 text-xl leading-relaxed mb-8">
                     Intent-driven NLP platform. Replaced slow zero-shot classification with all-MiniLM embeddings + SVM head serving thousands of requests/sec. Built occlusion explainability for word-level intent attribution.
                   </p>
                   <div className="flex flex-wrap gap-2 mb-12">
@@ -108,7 +102,7 @@ export default function Projects() {
           </div>
           
           {/* End cap */}
-          <div className="w-[40vw] shrink-0 flex flex-col items-center justify-center h-full">
+          <div className="w-[80vw] md:w-[40vw] shrink-0 snap-center flex flex-col items-center justify-center h-full">
             <h2 className="text-[12vw] leading-none font-semibold tracking-tighter text-white/10">FIN.</h2>
           </div>
         </div>
