@@ -29,12 +29,14 @@ export default function Home() {
           {/* Minimalist Tech Grid */}
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 w-full">
             {[
-              { label: "Backend Architecture", tech: "Python, FastAPI, C/C++" },
-              { label: "Agentic AI", tech: "Ollama, Hugging Face, LLMs" },
-              { label: "Data Pipelines", tech: "SQLite WAL, Vector DBs, RAG" },
-              { label: "Frontend Systems", tech: "React, TypeScript, GSAP" }
+              { label: "Backend Architecture", tech: "Python, FastAPI, C/C++", span: 1 },
+              { label: "Agentic AI", tech: "Ollama, Hugging Face, LLMs", span: 1 },
+              { label: "Data Pipelines", tech: "SQLite WAL, Vector DBs, RAG", span: 1 },
+              { label: "Frontend Systems", tech: "React, TypeScript, GSAP", span: 1 },
+              { label: "Core Infrastructure & Security", tech: "Docker, Cloudflare, Linux, AWS, Git Actions", span: 2 },
+              { label: "Real-time Machine Learning Systems", tech: "WebSockets, gRPC, Redis, TensorFlow, PyTorch", span: 2 }
             ].map((item, idx) => (
-              <div key={idx} className="flex flex-col p-5 bg-white/5 border border-white/10 rounded-xl hover:bg-white/10 transition-colors duration-300">
+              <div key={idx} className={`flex flex-col p-5 bg-white/5 border border-white/10 rounded-xl hover:bg-white/10 transition-colors duration-300 ${item.span === 2 ? 'col-span-2' : 'col-span-1'}`}>
                 <span className="text-white/40 text-[10px] uppercase tracking-[0.2em] font-bold mb-2">{item.label}</span>
                 <span className="text-white/90 text-sm font-medium">{item.tech}</span>
               </div>
