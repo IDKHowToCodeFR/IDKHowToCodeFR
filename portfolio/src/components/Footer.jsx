@@ -13,7 +13,7 @@ export default function Footer() {
             </p>
           </div>
 
-          <a href="mailto:mangawa.rachit701@gmail.com" className="group flex items-center justify-between w-full md:w-auto md:min-w-[360px] border-b border-white/20 pb-4 text-white hover:border-white transition-colors">
+          <a href="mailto:mangawa.rachit701@gmail.com" className="group flex items-center justify-between w-full md:w-auto md:min-w-90 border-b border-white/20 pb-4 text-white hover:border-white transition-colors">
             <span className="text-xl font-light">Get in touch</span>
             <svg className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform opacity-50 group-hover:opacity-100" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M7 17L17 7" /><path d="M7 7h10v10" /></svg>
           </a>
