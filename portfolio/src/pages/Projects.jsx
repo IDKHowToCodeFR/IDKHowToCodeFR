@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { PremiumCard, MagneticButton, useReveal } from '../components/UI';
-import { usePortfolioData } from '../data/ContentAdapter';
+import { PORTFOLIO_CONTENT } from '../content';
 
 export default function Projects() {
   useReveal();
   const location = useLocation();
-  const data = usePortfolioData();
+  const data = PORTFOLIO_CONTENT;
 
   useEffect(() => {
     if (location.hash) {

@@ -32,9 +32,9 @@ export default function Resume() {
 
         {/* Download Button */}
         <div className="reveal reveal-delay-2">
-          <a href="./resume.pdf" download target="_blank" rel="noreferrer" className="group inline-flex items-center justify-center gap-4 bg-white text-black hover:bg-white/90 rounded-full px-8 py-4 transition-all duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] active:scale-[0.98]">
+          <a href="./resume.pdf" download target="_blank" rel="noreferrer" className="group inline-flex items-center justify-center gap-4 bg-white text-black hover:bg-white/90 rounded-full px-8 py-4 transition-[transform,background-color] duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] active:duration-150 active:scale-[0.97]">
             <span className="text-sm font-bold tracking-widest uppercase">Download PDF</span>
-            <div className="w-8 h-8 rounded-full bg-black/10 flex items-center justify-center ml-2 group-hover:translate-y-1 transition-transform duration-700">
+            <div className="w-8 h-8 rounded-full bg-black/10 flex items-center justify-center ml-2 group-hover:translate-x-1 group-hover:-translate-y-0.5 transition-transform duration-700 ease-[cubic-bezier(0.32,0.72,0,1)]">
               <DownloadSimple weight="bold" size={14} />
             </div>
           </a>

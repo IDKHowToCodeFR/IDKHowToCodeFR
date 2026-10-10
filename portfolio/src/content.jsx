@@ -17,7 +17,7 @@ export const PORTFOLIO_CONTENT = {
       <>
         Systems engineer architecting <span className="text-white font-medium underline decoration-white/20 underline-offset-4 decoration-1">high-concurrency distributed backends</span> and <span className="text-white font-medium underline decoration-white/20 underline-offset-4 decoration-1">edge AI platforms</span>.
         <br /><br />
-        Writing C++ and Python to ship complex RAG pipelines, agentic workflows, and <span className="text-white font-medium underline decoration-white/20 underline-offset-4 decoration-1">hardware-accelerated telemetry systems</span> that turn raw research into production.
+        Writing C++ and Python to ship RAG pipelines, agentic workflows, and <span className="text-white font-medium underline decoration-white/20 underline-offset-4 decoration-1">hardware-accelerated telemetry systems</span>.
       </>
     )
   },
@@ -101,8 +101,8 @@ export const PORTFOLIO_CONTENT = {
       tech: ["Next.js 16", "React 19", "FastAPI", "Python 3.10", "PlatformIO", "WebSockets"],
       deepDive: [
         <React.Fragment key="1">Engineered a <span className="text-white font-medium pb-px border-b border-emerald-500/40">fault-tolerant telemetry dashboard</span> for live cardiovascular monitoring via WebSockets.</React.Fragment>,
-        <React.Fragment key="2">Built an automated MLOps pipeline for seamless <span className="text-white font-medium pb-px border-b border-emerald-500/40">background retraining and hot-swapping</span> without interrupting active inference.</React.Fragment>,
-        <React.Fragment key="3">Implemented an exporter that transpiles Scikit-Learn soft-voting ensembles into highly optimized, <span className="text-white font-medium pb-px border-b border-emerald-500/40">zero-dependency C++ code</span> tailored for microcontrollers (ESP32).</React.Fragment>
+        <React.Fragment key="2">Built an MLOps pipeline for <span className="text-white font-medium pb-px border-b border-emerald-500/40">background retraining and model hot-swapping</span> without inference downtime.</React.Fragment>,
+        <React.Fragment key="3">Wrote an exporter that transpiles Scikit-Learn soft-voting ensembles into <span className="text-white font-medium pb-px border-b border-emerald-500/40">zero-dependency C++</span> for ESP32 microcontrollers.</React.Fragment>
       ],
       repo: "https://github.com/IDKHowToCodeFR/HEARTFLOW_OS",
       live: "https://idkhowtocodefr.github.io/HEARTFLOW_OS/",

@@ -3,11 +3,11 @@ import { Link } from 'react-router-dom';
 import { useReveal, PremiumCard } from '../components/UI';
 import { GithubLogo, LinkedinLogo, EnvelopeSimple, Info, GitPullRequest } from "@phosphor-icons/react";
 import aadhaarLogo from '../assets/aadhaar-logo.png';
-import { usePortfolioData } from '../data/ContentAdapter';
+import { PORTFOLIO_CONTENT } from '../content';
 
 export default function Home() {
   useReveal();
-  const data = usePortfolioData();
+  const data = PORTFOLIO_CONTENT;
 
   return (
     <main className="relative z-10 w-full overflow-hidden">
@@ -32,7 +32,7 @@ export default function Home() {
           {/* Tech Stack Stack (Right Column) */}
           <div className="lg:col-span-4 flex flex-col gap-3">
             {data.techStack.map((item, idx) => (
-              <div key={idx} className="group flex items-center justify-between p-4 md:p-5 bg-white/2 border border-white/10 rounded-2xl hover:bg-white/5 hover:border-white/20 transition-all duration-300">
+              <div key={idx} className="group flex items-center justify-between p-4 md:p-5 bg-white/2 border border-white/10 rounded-2xl hover:bg-white/5 hover:border-white/20 transition-all duration-300 reveal" style={{ animationDelay: `${idx * 50 + 200}ms` }}>
                 <div className="flex flex-col">
                   <span className="text-white/50 text-xs uppercase tracking-[0.2em] font-bold mb-1.5">{item.label}</span>
                   <span className="text-white/90 text-sm md:text-base font-medium transition-transform duration-300 group-hover:translate-x-1">{item.tech}</span>
@@ -107,7 +107,7 @@ export default function Home() {
               link: "/projects#semantic"
             }
           ].map((project, idx) => (
-            <Link to={project.link} key={idx} className="group relative reveal block hover:bg-white/2 p-6 -ml-6 pl-12 md:pl-14 rounded-2xl transition-colors duration-300">
+            <Link to={project.link} key={idx} className="group relative reveal block hover:bg-white/2 p-6 -ml-6 pl-12 md:pl-14 rounded-2xl transition-[color,background-color,transform] duration-300 active:scale-[0.99] active:duration-150">
               {/* Timeline Node */}
               <div className="absolute left-6 top-10 -translate-x-1/2 w-3 h-3 rounded-full bg-white/20 border-2 border-[#050505] group-hover:bg-white group-hover:scale-150 group-hover:shadow-[0_0_10px_rgba(255,255,255,0.5)] transition-all duration-300"></div>
 
@@ -146,7 +146,7 @@ export default function Home() {
                   <div className="text-white/90 font-medium mb-1">
                     Codeforces <span className="text-white/30 font-light mx-1">:</span> <span className="text-green-400">Pupil</span>
                   </div>
-                  <a href="https://codeforces.com/profile/i_win_again" target="_blank" rel="noreferrer" className="group flex items-center gap-1 text-xs uppercase tracking-widest font-bold text-white/50 hover:text-white transition-colors">
+                  <a href="https://codeforces.com/profile/i_win_again" target="_blank" rel="noreferrer" className="group flex items-center gap-1 text-xs uppercase tracking-widest font-bold text-white/50 hover:text-white transition-all duration-150 ease-out active:scale-[0.97]">
                     @i_win_again <svg className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M7 17L17 7" /><path d="M7 7h10v10" /></svg>
                   </a>
                 </div>
@@ -160,7 +160,7 @@ export default function Home() {
                   <div className="text-white/90 font-medium mb-1">
                     LeetCode <span className="text-white/30 font-light mx-1">:</span> {data.ratings.leetcode.rank}
                   </div>
-                  <a href="https://leetcode.com/u/idkhowtocodefr/" target="_blank" rel="noreferrer" className="group flex items-center gap-1 text-xs uppercase tracking-widest font-bold text-white/50 hover:text-white transition-colors">
+                  <a href="https://leetcode.com/u/idkhowtocodefr/" target="_blank" rel="noreferrer" className="group flex items-center gap-1 text-xs uppercase tracking-widest font-bold text-white/50 hover:text-white transition-all duration-150 ease-out active:scale-[0.97]">
                     @idkhowtocodefr <svg className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M7 17L17 7" /><path d="M7 7h10v10" /></svg>
                   </a>
                 </div>
@@ -174,7 +174,7 @@ export default function Home() {
                   <div className="text-white/90 font-medium mb-1">
                     LeetCode {data.ratings.leetcode.contest}
                   </div>
-                  <a href="https://leetcode.com/contest/biweekly-contest-190/" target="_blank" rel="noreferrer" className="group flex items-center gap-1 text-xs uppercase tracking-widest font-bold text-white/50 hover:text-white transition-colors">
+                  <a href="https://leetcode.com/contest/biweekly-contest-190/" target="_blank" rel="noreferrer" className="group flex items-center gap-1 text-xs uppercase tracking-widest font-bold text-white/50 hover:text-white transition-all duration-150 ease-out active:scale-[0.97]">
                     Contest Page <svg className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M7 17L17 7" /><path d="M7 7h10v10" /></svg>
                   </a>
                 </div>
@@ -195,11 +195,11 @@ export default function Home() {
                 <div className="flex flex-wrap items-center gap-3 mb-5">
                   <span className="text-white/90 font-medium text-lg">{data.openSource.project}</span>
                   <div className="flex gap-2 mt-2 md:mt-0">
-                    <a href={data.openSource.issueUrl} target="_blank" rel="noreferrer" className="flex items-center gap-1.5 text-xs uppercase tracking-widest font-bold bg-white/5 px-2 py-1 rounded-md text-white/70 hover:bg-white/20 hover:text-white transition-colors border border-white/10">
+                    <a href={data.openSource.issueUrl} target="_blank" rel="noreferrer" className="flex items-center gap-1.5 text-xs uppercase tracking-widest font-bold bg-white/5 px-2 py-1 rounded-md text-white/70 hover:bg-white/20 hover:text-white transition-all duration-150 ease-out active:scale-[0.97] border border-white/10">
                       <Info weight="bold" size={12} />
                       Issue #{data.openSource.issueNumber}
                     </a>
-                    <a href={data.openSource.prUrl} target="_blank" rel="noreferrer" className="flex items-center gap-1.5 text-xs uppercase tracking-widest font-bold bg-purple-500/10 px-2 py-1 rounded-md text-purple-400 hover:bg-purple-500/20 hover:text-purple-300 transition-colors border border-purple-500/20">
+                    <a href={data.openSource.prUrl} target="_blank" rel="noreferrer" className="flex items-center gap-1.5 text-xs uppercase tracking-widest font-bold bg-purple-500/10 px-2 py-1 rounded-md text-purple-400 hover:bg-purple-500/20 hover:text-purple-300 transition-all duration-150 ease-out active:scale-[0.97] border border-purple-500/20">
                       <GitPullRequest weight="bold" size={12} />
                       Merged PR
                     </a>

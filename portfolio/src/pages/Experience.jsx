@@ -1,7 +1,7 @@
 import React from 'react';
 import { useReveal, PremiumCard } from '../components/UI';
 import aadhaarLogo from '../assets/aadhaar-logo.png';
-import { usePortfolioData } from '../data/ContentAdapter';
+import { PORTFOLIO_CONTENT } from '../content';
 
 const logos = {
   'aadhaar-logo.png': aadhaarLogo
@@ -9,7 +9,7 @@ const logos = {
 
 export default function Experience() {
   useReveal();
-  const data = usePortfolioData();
+  const data = PORTFOLIO_CONTENT;
 
   return (
     <main className="relative z-10 w-full overflow-hidden min-h-screen">

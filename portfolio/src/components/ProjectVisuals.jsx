@@ -72,7 +72,7 @@ const TelemetryVisualizer = ({
                 </div>
                 <div className="w-full h-1 bg-white/5 rounded-full overflow-hidden">
                   <div 
-                    className={`h-full ${statusBg}/80 transition-all duration-700 ease-[cubic-bezier(0.77,0,0.175,1)]`}
+                    className={`h-full ${statusBg}/80 transition-[width,background-color] duration-700 ease-[cubic-bezier(0.77,0,0.175,1)]`}
                     style={{ width: `${data[i] * 100}%` }}
                   />
                 </div>
@@ -86,7 +86,7 @@ const TelemetryVisualizer = ({
                {logs.map((log, i) => (
                  <div 
                    key={log.id} 
-                   className={`text-[9px] leading-loose truncate transition-all duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] starting:opacity-0 starting:-translate-y-2 translate-y-0 ${i === 0 ? 'text-white/90 opacity-100' : i === 1 ? 'text-white/50 opacity-100' : 'text-white/20 opacity-100'}`}
+                   className={`text-[9px] leading-loose truncate transition-[opacity,transform,color] duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] starting:opacity-0 starting:-translate-y-2 translate-y-0 ${i === 0 ? 'text-white/90 opacity-100' : i === 1 ? 'text-white/50 opacity-100' : 'text-white/20 opacity-100'}`}
                  >
                    {log.text}
                  </div>

@@ -1,9 +1,9 @@
 import React from 'react';
 import { GithubLogo, LinkedinLogo, ArrowUpRight } from "@phosphor-icons/react";
-import { usePortfolioData } from '../data/ContentAdapter';
+import { PORTFOLIO_CONTENT } from '../content';
 
 export default function Footer() {
-  const data = usePortfolioData();
+  const data = PORTFOLIO_CONTENT;
   return (
     <footer className="w-full border-t border-white/5 py-32 bg-[#020202]">
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex flex-col gap-24">

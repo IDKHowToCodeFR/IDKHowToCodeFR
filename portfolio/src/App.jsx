@@ -47,7 +47,7 @@ function App() {
 
         <nav 
           ref={navRef}
-          className="fixed top-6 left-1/2 -translate-x-1/2 z-50 bg-white/5 backdrop-blur-2xl ring-1 ring-white/10 px-8 py-4 rounded-full flex items-center gap-6 md:gap-8 transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] opacity-100 translate-y-0"
+          className="fixed top-6 left-1/2 -translate-x-1/2 z-50 bg-white/5 backdrop-blur-2xl ring-1 ring-white/10 px-8 py-4 rounded-full flex items-center gap-6 md:gap-8 transition-[transform,opacity,background-color] duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] opacity-100 translate-y-0"
         >
           <Link to="/" className="text-xs font-medium uppercase tracking-widest text-white/70 hover:text-white transition-colors">Home</Link>
           <Link to="/experience" className="text-xs font-medium uppercase tracking-widest text-white/70 hover:text-white transition-colors">Experience</Link>

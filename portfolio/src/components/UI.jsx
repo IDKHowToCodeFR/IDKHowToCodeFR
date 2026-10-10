@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { ArrowUpRight } from "@phosphor-icons/react";
 
 export const PremiumCard = ({ children, className = "" }) => (
-  <div className={`p-1.5 rounded-4xl bg-white/5 ring-1 ring-white/10 w-full overflow-hidden transition-transform duration-500 hover:scale-[1.01] ${className}`}>
+  <div className={`p-1.5 rounded-4xl bg-white/5 ring-1 ring-white/10 w-full overflow-hidden ${className}`}>
     <div className="bg-[#0A0A0A] rounded-[1.625rem] shadow-[inset_0_1px_1px_rgba(255,255,255,0.05)] w-full p-8 md:p-12 flex flex-col justify-between wrap-break-word overflow-hidden">
       {children}
     </div>
@@ -20,7 +20,7 @@ export const MagneticButton = ({ children, href, isInternal }) => {
     </>
   );
 
-  const classes = "group inline-flex items-center gap-4 bg-white/5 hover:bg-white/10 ring-1 ring-white/10 rounded-full pl-6 pr-2 py-3 md:py-2 transition-all duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] active:scale-[0.98]";
+  const classes = "group inline-flex items-center gap-4 bg-white/5 hover:bg-white/10 ring-1 ring-white/10 rounded-full pl-6 pr-2 py-3 md:py-2 transition-[transform,background-color] duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] active:duration-150 active:scale-[0.97]";
 
   if (isInternal) {
     return (
