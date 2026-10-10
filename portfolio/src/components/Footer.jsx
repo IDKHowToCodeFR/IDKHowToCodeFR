@@ -9,7 +9,7 @@ export default function Footer() {
           <div>
             <h2 className="text-5xl md:text-7xl font-medium tracking-tight text-white mb-4">Let's build.</h2>
             <p className="text-xl text-white/40 font-light max-w-xl lg:max-w-2xl">
-              Currently open for new opportunities. Let's discuss AI, systems architecture, or your next project.
+              Open to new opportunities. Reach out about work or collaboration.
             </p>
           </div>
 
