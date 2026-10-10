@@ -1,10 +1,12 @@
 import React, { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import { PremiumCard, MagneticButton, useReveal, TranspilerVisual, SemanticAnalyzerVisual } from '../components/UI';
+import { PremiumCard, MagneticButton, useReveal } from '../components/UI';
+import { usePortfolioData } from '../data/ContentAdapter';
 
 export default function Projects() {
   useReveal();
   const location = useLocation();
+  const data = usePortfolioData();
 
   useEffect(() => {
     if (location.hash) {
@@ -18,43 +20,14 @@ export default function Projects() {
     }
   }, [location]);
 
-  const projects = [
-    {
-      id: "heartflow",
-      title: "HeartFlow OS",
-      description: "ML platform that exports Python models to optimized C++ for microcontrollers, with a live telemetry dashboard.",
-      deepDive: [
-        <>Engineered a <span className="text-white font-medium pb-px border-b border-emerald-500/40">fault-tolerant telemetry dashboard</span> for live cardiovascular monitoring via WebSockets.</>,
-        <>Built an automated MLOps pipeline for seamless <span className="text-white font-medium pb-px border-b border-emerald-500/40">background retraining and hot-swapping</span> without interrupting active inference.</>,
-        <>Implemented an exporter that transpiles Scikit-Learn soft-voting ensembles into highly optimized, <span className="text-white font-medium pb-px border-b border-emerald-500/40">zero-dependency C++ code</span> tailored for microcontrollers (ESP32).</>
-      ],
-      tech: ['Next.js 16', 'React 19', 'FastAPI', 'Python 3.10', 'PlatformIO', 'WebSockets'],
-      repo: "https://github.com/IDKHowToCodeFR/HEARTFLOW_OS",
-      live: "https://idkhowtocodefr.github.io/HEARTFLOW_OS/",
-      visualContent: <TranspilerVisual />
-    },
-    {
-      id: "semantic",
-      title: "Semantic Analyzer",
-      description: "NLP pipeline that classifies customer feedback and support tickets using sentence embeddings and SVM.",
-      deepDive: [
-        <>Replaced slow zero-shot classification with <span className="text-white font-medium pb-px border-b border-blue-500/40">all-MiniLM embeddings</span> and an <span className="text-white font-medium pb-px border-b border-blue-500/40">SVM classification head</span>, handling thousands of requests per second.</>,
-        <>Developed a custom <span className="text-white font-medium pb-px border-b border-blue-500/40">occlusion explainability algorithm</span> to calculate exact word-level contributions for intent attribution.</>,
-        <>Deployed a <span className="text-white font-medium pb-px border-b border-blue-500/40">FastAPI REST endpoint</span> with scoring heuristics for production routing.</>
-      ],
-      tech: ['Python', 'FastAPI', 'Sentence Transformers', 'Hugging Face', 'Scikit-Learn'],
-      repo: "https://github.com/IDKHowToCodeFR/Semantic-Comment-Analyze",
-      visualContent: <SemanticAnalyzerVisual />
-    }
-  ];
-
+  const projects = data.projects;
   return (
     <main className="relative z-10 w-full overflow-hidden">
       {/* Intro section */}
       <section className="relative pt-40 pb-20 px-6 md:px-12 w-full max-w-7xl mx-auto">
         <div className="reveal">
-          <h1 className="text-5xl md:text-8xl font-medium tracking-tighter text-white mb-8">
-            Architecture <br/><span className="text-white/40">& Code</span>
+          <h1 className="font-serif text-5xl md:text-8xl font-medium tracking-tighter text-white mb-8">
+            Architecture <br/><span className="text-white/50">& Code</span>
           </h1>
           <p className="text-lg md:text-xl text-white/60 max-w-2xl font-light leading-relaxed">
             The systems and tools I've built, and the decisions behind them.
@@ -75,11 +48,11 @@ export default function Projects() {
                   {/* Left/Text Column */}
                   <div className="w-full lg:w-1/2 flex flex-col items-start">
                     <span className="text-emerald-400 font-mono text-sm mb-4 block tracking-wider">0{idx + 1} // {project.id.toUpperCase()}</span>
-                    <h2 className="text-4xl md:text-5xl font-medium tracking-tight text-white mb-6">{project.title}</h2>
+                    <h2 className="font-serif text-4xl md:text-5xl font-medium tracking-tight text-white mb-6">{project.title}</h2>
                     
                     <div className="flex flex-wrap gap-2 mb-8">
                       {project.tech.map(tag => (
-                        <span key={tag} className="px-3 py-1.5 text-[10px] md:text-xs tracking-widest uppercase bg-white/5 border border-white/10 rounded-full text-white/60 font-medium">
+                        <span key={tag} className="px-3 py-1.5 text-xs tracking-widest uppercase bg-white/5 border border-white/10 rounded-full text-white/60 font-medium">
                           {tag}
                         </span>
                       ))}

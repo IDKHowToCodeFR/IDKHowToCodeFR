@@ -3,7 +3,7 @@ import { HashRouter, Routes, Route, Link, useLocation } from 'react-router-dom';
 import Home from './pages/Home';
 import Projects from './pages/Projects';
 import Experience from './pages/Experience';
-import Contact from './pages/Contact';
+
 import Resume from './pages/Resume';
 import Footer from './components/Footer';
 
@@ -60,7 +60,7 @@ function App() {
           <Route path="/experience" element={<Experience />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/resume" element={<Resume />} />
-          <Route path="/contact" element={<Contact />} />
+
         </Routes>
 
         <Footer />
