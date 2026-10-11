@@ -18,10 +18,10 @@ const PAGE_TITLES = {
 };
 
 const PAGE_DESCRIPTIONS = {
-  '/': 'Systems & AI Engineer building high-throughput distributed backends, edge AI platforms, and compiler runtimes in C++ and Python.',
-  '/experience': 'Production engineering, offline AI pipelines, and distributed backends built for government scale at UIDAI (Aadhaar).',
-  '/projects': 'Compilers for microcontrollers, semantic search pipelines, and core contributions to TensorFlow Core.',
-  '/resume': 'Curriculum vitae of Rachit Mangawa: CS & AI at NSUT Delhi, UIDAI engineering internship, and competitive ratings.',
+  '/': 'Systems engineer focused on high-throughput backend architecture, local AI runtimes, and low-level code generation.',
+  '/experience': 'Air-gapped document intelligence and national contact-center telemetry pipelines engineered at UIDAI (Aadhaar).',
+  '/projects': 'Bare-metal C++ compilers for microcontrollers, semantic analyzers, and upstream patches in TensorFlow Core.',
+  '/resume': 'Academic foundation in CS & AI at NSUT Delhi, production government engineering, and LeetCode Knight standing.',
 };
 
 const NAV_LINKS = [

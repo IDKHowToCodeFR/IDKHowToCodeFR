@@ -22,8 +22,13 @@ export default function Resume() {
               </span>
             </h1>
 
-            <div className="reveal reveal-delay-1 text-lg md:text-xl lg:text-2xl font-light text-white/70 leading-[1.6] tracking-tight text-left mb-8">
-              Undergraduate in Computer Science & AI at <span className="text-white font-medium underline decoration-white/20 underline-offset-4 decoration-1 hover:decoration-white/50 transition-colors">NSUT Delhi</span>, featuring production work at <span className="text-white font-medium underline decoration-white/20 underline-offset-4 decoration-1 hover:decoration-white/50 transition-colors">UIDAI (Aadhaar)</span>, numerical autodiff fixes in <span className="text-white font-medium underline decoration-white/20 underline-offset-4 decoration-1 hover:decoration-white/50 transition-colors">TensorFlow</span>, and a top-0.8% <span className="text-white font-medium underline decoration-white/20 underline-offset-4 decoration-1 hover:decoration-white/50 transition-colors">LeetCode Knight</span> rating.
+            <div className="reveal reveal-delay-1 text-lg md:text-xl lg:text-2xl font-light text-white/70 leading-[1.6] tracking-tight text-left mb-8 space-y-4">
+              <p>
+                Academic foundation in Computer Science & Artificial Intelligence at <span className="text-white font-medium underline decoration-white/20 underline-offset-4 decoration-1 hover:decoration-white/50 transition-colors">NSUT Delhi</span>, backed by production government engineering, calculus engine debugging, and algorithmic competition.
+              </p>
+              <p>
+                Verified curriculum covering high-concurrency backend services, embedded compiler design, and a top-0.8% <span className="text-white font-medium underline decoration-white/20 underline-offset-4 decoration-1 hover:decoration-white/50 transition-colors">LeetCode Knight rating (1982)</span>.
+              </p>
             </div>
 
             {/* Download Button */}
@@ -46,11 +51,11 @@ export default function Resume() {
           {/* Right Column (Credentials & Profile Highlights) */}
           <div className="lg:col-span-4 flex flex-col gap-3">
             {[
-              { label: "Academic Degree", value: "B.Tech CS & AI (NSUT Delhi)" },
-              { label: "Industry Role", value: "Software Dev Intern (UIDAI)" },
-              { label: "Competitive Rank", value: "LeetCode Knight (Top 0.8%)" },
-              { label: "Open Source", value: "TensorFlow Math Autodiff" },
-              { label: "Verified Format", value: "PDF Document (Print Ready)" },
+              { label: "Degree & Major", value: "B.Tech in CS & AI (NSUT)" },
+              { label: "Govt Fellowship", value: "Software Dev Intern (UIDAI)" },
+              { label: "Competitive Standing", value: "Knight (1982 / Rank 316)" },
+              { label: "Open-Source Merge", value: "TensorFlow Math Autodiff" },
+              { label: "Document Status", value: "Print-Ready Vector PDF" },
             ].map((item, idx) => (
               <div key={idx} className="group flex items-center justify-between p-4 md:p-5 bg-white/2 border border-white/10 rounded-2xl hover:bg-white/5 hover:border-white/20 transition-all duration-300 reveal" style={{ animationDelay: `${idx * 50 + 200}ms` }}>
                 <div className="flex flex-col">

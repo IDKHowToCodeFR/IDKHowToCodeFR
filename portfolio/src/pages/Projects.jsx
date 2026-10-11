@@ -39,10 +39,10 @@ export default function Projects() {
 
             <div className="reveal reveal-delay-1 text-lg md:text-xl lg:text-2xl font-light text-white/70 leading-[1.6] tracking-tight text-left space-y-4">
               <p>
-                Developing <span className="text-white font-medium underline decoration-white/20 underline-offset-4 decoration-1 hover:decoration-white/50 transition-colors">zero-dependency C++ code generators</span>, real-time streaming architectures, and <span className="text-white font-medium underline decoration-white/20 underline-offset-4 decoration-1 hover:decoration-white/50 transition-colors">vector semantic classifiers</span>.
+                Bridging machine learning and hardware through <span className="text-white font-medium underline decoration-white/20 underline-offset-4 decoration-1 hover:decoration-white/50 transition-colors">bare-metal compilers</span>, interpretable semantic analyzers, and upstream mathematical patches.
               </p>
               <p>
-                From compiling scikit-learn models for bare-metal execution on <span className="text-white font-medium underline decoration-white/20 underline-offset-4 decoration-1 hover:decoration-white/50 transition-colors">ESP32 microcontrollers</span> to fixing numerical gradient singularities deep inside <span className="text-white font-medium underline decoration-white/20 underline-offset-4 decoration-1 hover:decoration-white/50 transition-colors">TensorFlow Core</span> autodiff engines.
+                From transpiling soft-voting ensemble trees into pure C++ for <span className="text-white font-medium underline decoration-white/20 underline-offset-4 decoration-1 hover:decoration-white/50 transition-colors">microcontroller registers</span>, to debugging Bessel function singularities inside the <span className="text-white font-medium underline decoration-white/20 underline-offset-4 decoration-1 hover:decoration-white/50 transition-colors">TensorFlow Core autodiff engine</span>.
               </p>
             </div>
           </div>
@@ -50,11 +50,11 @@ export default function Projects() {
           {/* Right Column (Architecture & Tooling Specs) */}
           <div className="lg:col-span-4 flex flex-col gap-3">
             {[
-              { label: "Embedded Code Generator", value: "HeartFlow OS (ESP32 C++)" },
-              { label: "Semantic Classifier", value: "MiniLM + SVM Pipeline" },
-              { label: "Core Contribution", value: "TensorFlow Autodiff Core" },
-              { label: "Embedded Toolchain", value: "PlatformIO & Scikit-Learn" },
-              { label: "Streaming Transport", value: "WebSockets & Async I/O" },
+              { label: "Hardware Transpiler", value: "HeartFlow OS (C++17 / FreeRTOS)" },
+              { label: "Target Microcontroller", value: "ESP32 Bare-Metal Registers" },
+              { label: "Semantic Pipeline", value: "MiniLM Embeddings + SVM Head" },
+              { label: "Feature Attribution", value: "Custom Occlusion Algorithm" },
+              { label: "Upstream Core Patch", value: "TensorFlow Autodiff Singularity" },
             ].map((item, idx) => (
               <div key={idx} className="group flex items-center justify-between p-4 md:p-5 bg-white/2 border border-white/10 rounded-2xl hover:bg-white/5 hover:border-white/20 transition-all duration-300 reveal" style={{ animationDelay: `${idx * 50 + 200}ms` }}>
                 <div className="flex flex-col">

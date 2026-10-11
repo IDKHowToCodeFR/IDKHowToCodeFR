@@ -19,9 +19,9 @@ export const PORTFOLIO_CONTENT = {
   bio: {
     content: (
       <>
-        Systems engineer architecting <span className="text-white font-medium underline decoration-white/20 underline-offset-4 decoration-1">high-concurrency distributed backends</span> and <span className="text-white font-medium underline decoration-white/20 underline-offset-4 decoration-1">edge AI platforms</span>.
+        Systems engineer focused on <span className="text-white font-medium underline decoration-white/20 underline-offset-4 decoration-1 hover:decoration-white/50 transition-colors">high-throughput backend architecture</span>, local AI runtimes, and low-level code generation.
         <br /><br />
-        Writing C++ and Python to ship RAG pipelines, agentic workflows, and <span className="text-white font-medium underline decoration-white/20 underline-offset-4 decoration-1">low-latency distributed systems</span>.
+        Undergraduate at <span className="text-white font-medium underline decoration-white/20 underline-offset-4 decoration-1 hover:decoration-white/50 transition-colors">NSUT Delhi</span>, writing C++ and Python to bridge distributed cloud services with <span className="text-white font-medium underline decoration-white/20 underline-offset-4 decoration-1 hover:decoration-white/50 transition-colors">resource-constrained edge hardware</span>.
       </>
     )
   },

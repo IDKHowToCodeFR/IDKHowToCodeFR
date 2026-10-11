@@ -33,10 +33,10 @@ export default function Experience() {
 
             <div className="reveal reveal-delay-1 text-lg md:text-xl lg:text-2xl font-light text-white/70 leading-[1.6] tracking-tight text-left space-y-4">
               <p>
-                Engineering <span className="text-white font-medium underline decoration-white/20 underline-offset-4 decoration-1 hover:decoration-white/50 transition-colors">high-throughput distributed backends</span>, air-gapped document processing pipelines, and resilient operational platforms.
+                Architected <span className="text-white font-medium underline decoration-white/20 underline-offset-4 decoration-1 hover:decoration-white/50 transition-colors">air-gapped document intelligence</span> and national contact-center telemetry pipelines at <span className="text-white font-medium underline decoration-white/20 underline-offset-4 decoration-1 hover:decoration-white/50 transition-colors">UIDAI (Aadhaar)</span>.
               </p>
               <p>
-                Built systems at <span className="text-white font-medium underline decoration-white/20 underline-offset-4 decoration-1 hover:decoration-white/50 transition-colors">UIDAI (Aadhaar)</span> deployed to 1,000+ internal staff, replacing manual processes with automated ETL and <span className="text-white font-medium underline decoration-white/20 underline-offset-4 decoration-1 hover:decoration-white/50 transition-colors">offline multimodal intelligence</span> across 12 regional languages.
+                Eliminated manual spreadsheet workflows with automated asynchronous ingest, zero-cloud OCR across <span className="text-white font-medium underline decoration-white/20 underline-offset-4 decoration-1 hover:decoration-white/50 transition-colors">12 Indic languages</span>, and sub-minute LLM triage running strictly on <span className="text-white font-medium underline decoration-white/20 underline-offset-4 decoration-1 hover:decoration-white/50 transition-colors">CPU-constrained hardware</span> for 1,000+ officers.
               </p>
             </div>
           </div>
@@ -44,11 +44,11 @@ export default function Experience() {
           {/* Right Column (Impact & Scale Specs) */}
           <div className="lg:col-span-4 flex flex-col gap-3">
             {[
-              { label: "Engineering Fellow", value: "UIDAI (Aadhaar)" },
-              { label: "Production Scale", value: "1,000+ Internal Officers" },
-              { label: "Offline Multimodal", value: "Ollama, Gemma3, OpenCV" },
-              { label: "Async ETL Platform", value: "FastAPI, Pandas, SQLite WAL" },
-              { label: "Language Coverage", value: "12 Regional Indian Scripts" },
+              { label: "Host Organization", value: "UIDAI / Aadhaar HQ" },
+              { label: "Internal Reach", value: "1,000+ Active Officers" },
+              { label: "Local Model Stack", value: "CPU-Bound Gemma3 & Tesseract" },
+              { label: "Ingest Cadence", value: "100K+ Rows / Idempotent WAL" },
+              { label: "Indic Script Coverage", value: "12 Regional Languages" },
             ].map((item, idx) => (
               <div key={idx} className="group flex items-center justify-between p-4 md:p-5 bg-white/2 border border-white/10 rounded-2xl hover:bg-white/5 hover:border-white/20 transition-all duration-300 reveal" style={{ animationDelay: `${idx * 50 + 200}ms` }}>
                 <div className="flex flex-col">
