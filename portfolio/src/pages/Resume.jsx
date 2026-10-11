@@ -1,9 +1,10 @@
 import React from 'react';
-import { useReveal } from '../components/UI';
+import useReveal from '../hooks/useReveal';
 import { DownloadSimple } from '@phosphor-icons/react';
 
 export default function Resume() {
   useReveal();
+  const pdfUrl = `${import.meta.env.BASE_URL}resume.pdf`;
 
   return (
     <main className="relative z-10 w-full min-h-screen pt-40 pb-32 overflow-hidden flex flex-col items-center">
@@ -19,7 +20,7 @@ export default function Resume() {
         <div className="hidden md:block w-full h-[70vh] md:h-[85vh] bg-white/5 ring-1 ring-white/10 rounded-4xl overflow-hidden p-2 mb-12">
           <div className="w-full h-full rounded-3xl overflow-hidden bg-black/50">
             <object
-              data="./resume.pdf"
+              data={pdfUrl}
               type="application/pdf"
               className="w-full h-full"
             >
@@ -32,10 +33,10 @@ export default function Resume() {
 
         {/* Download Button */}
         <div className="reveal reveal-delay-2">
-          <a href="./resume.pdf" download target="_blank" rel="noreferrer" className="group inline-flex items-center justify-center gap-4 bg-white text-black hover:bg-white/90 rounded-full px-8 py-4 transition-[transform,background-color] duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] active:duration-150 active:scale-[0.97]">
+          <a href={pdfUrl} download="Rachit_Mangawa_Resume.pdf" target="_blank" rel="noreferrer" className="group inline-flex items-center justify-center gap-4 bg-white text-black hover:bg-white/90 rounded-full px-8 py-4 transition-[transform,background-color] duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] active:duration-150 active:scale-[0.97]">
             <span className="text-sm font-bold tracking-widest uppercase">Download PDF</span>
             <div className="w-8 h-8 rounded-full bg-black/10 flex items-center justify-center ml-2 group-hover:translate-x-1 group-hover:-translate-y-0.5 transition-transform duration-700 ease-[cubic-bezier(0.32,0.72,0,1)]">
-              <DownloadSimple weight="bold" size={14} />
+              <DownloadSimple weight="bold" size={14} aria-hidden="true" />
             </div>
           </a>
         </div>
@@ -45,3 +46,4 @@ export default function Resume() {
     </main>
   );
 }
+

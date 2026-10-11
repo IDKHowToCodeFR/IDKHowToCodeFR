@@ -2,6 +2,8 @@ import React from 'react';
 import { GithubLogo, LinkedinLogo, ArrowUpRight } from "@phosphor-icons/react";
 import { PORTFOLIO_CONTENT } from '../content';
 
+const CURRENT_YEAR = new Date().getFullYear();
+
 export default function Footer() {
   const data = PORTFOLIO_CONTENT;
   return (
@@ -23,7 +25,7 @@ export default function Footer() {
 
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 pt-8 border-t border-white/10">
           <div className="text-white/40 text-xs font-bold tracking-widest uppercase">
-            © {new Date().getFullYear()} {data.personal.name}
+            © {CURRENT_YEAR} {data.personal.name}
           </div>
 
           <div className="flex flex-wrap items-center gap-8">

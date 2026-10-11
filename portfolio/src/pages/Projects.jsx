@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import { PremiumCard, MagneticButton, useReveal } from '../components/UI';
+import { PremiumCard, MagneticButton } from '../components/UI';
+import useReveal from '../hooks/useReveal';
 import { PORTFOLIO_CONTENT } from '../content';
 
 export default function Projects() {

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useReveal, PremiumCard } from '../components/UI';
-import { GithubLogo, LinkedinLogo, EnvelopeSimple, Info, GitPullRequest } from "@phosphor-icons/react";
+import useReveal from '../hooks/useReveal';
+import { Info, GitPullRequest } from "@phosphor-icons/react";
 import aadhaarLogo from '../assets/aadhaar-logo.png';
 import { PORTFOLIO_CONTENT } from '../content';
 
@@ -20,8 +20,10 @@ export default function Home() {
 
           {/* Left Column (Name + Bio) */}
           <div className="lg:col-span-8 flex flex-col justify-start">
-            <h1 className="font-serif text-[14vw] md:text-[9vw] leading-[0.9] font-medium tracking-tighter text-white mb-8 pb-2">
-              {data.personal.name.split(' ')[0]}<br />{data.personal.name.split(' ')[1]}<span className="text-white/50">.</span>
+            <h1 className="font-serif text-[14vw] md:text-[9vw] leading-[0.88] font-normal tracking-tight text-white mb-8 pb-2">
+              {data.personal.name.split(' ')[0]}<br />
+              <span className="italic">{data.personal.name.split(' ')[1]}</span>
+              <span className="text-white/40 not-italic">.</span>
             </h1>
 
             <p className="text-lg md:text-xl lg:text-2xl font-light text-white/70 leading-[1.6] tracking-tight text-left">
@@ -152,7 +154,7 @@ export default function Home() {
                 </div>
                 <div className="text-right">
                   <span className="text-xs uppercase tracking-widest text-white/50 block mb-1">Max Rating</span>
-                  <span className="block text-emerald-400 font-medium">{data.ratings.codeforces.rating}</span>
+                  <span className="block text-emerald-400 font-medium font-mono tabular-nums">{data.ratings.codeforces.rating}</span>
                 </div>
               </li>
               <li className="flex justify-between items-center border-b border-white/5 pb-4">
@@ -166,7 +168,7 @@ export default function Home() {
                 </div>
                 <div className="text-right">
                   <span className="text-xs uppercase tracking-widest text-white/50 block mb-1">Max Rating</span>
-                  <span className="block text-emerald-400 font-medium">{data.ratings.leetcode.rating}</span>
+                  <span className="block text-emerald-400 font-medium font-mono tabular-nums">{data.ratings.leetcode.rating}</span>
                 </div>
               </li>
               <li className="flex justify-between items-center">
@@ -180,8 +182,8 @@ export default function Home() {
                 </div>
                 <div className="text-right">
                   <span className="text-xs uppercase tracking-widest text-white/50 block mb-1">Global Rank</span>
-                  <span className="block text-emerald-400 font-medium">{data.ratings.leetcode.globalRank} <span className="text-white/50 text-xs">/ {data.ratings.leetcode.totalParticipants.toLocaleString()}</span></span>
-                  <span className="block text-emerald-400/80 text-xs uppercase tracking-widest mt-1">Top {data.ratings.leetcode.topPercent}%</span>
+                  <span className="block text-emerald-400 font-medium font-mono tabular-nums">{data.ratings.leetcode.globalRank} <span className="text-white/50 text-xs">/ {data.ratings.leetcode.totalParticipants.toLocaleString()}</span></span>
+                  <span className="block text-emerald-400/80 text-xs uppercase tracking-widest mt-1 font-mono tabular-nums">Top {data.ratings.leetcode.topPercent}%</span>
                 </div>
               </li>
             </ul>

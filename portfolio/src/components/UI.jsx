@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowUpRight } from "@phosphor-icons/react";
 
@@ -15,7 +15,7 @@ export const MagneticButton = ({ children, href, isInternal }) => {
     <>
       <span className="text-sm font-medium tracking-wide text-white/90 whitespace-nowrap">{children}</span>
       <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center transition-transform duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] group-hover:translate-x-1 group-hover:-translate-y-px group-hover:scale-105 shrink-0">
-        <ArrowUpRight />
+        <ArrowUpRight aria-hidden="true" />
       </div>
     </>
   );
@@ -37,19 +37,4 @@ export const MagneticButton = ({ children, href, isInternal }) => {
   );
 };
 
-export const useReveal = () => {
-  useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('animate-fade-up');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
-
-    document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
-    return () => observer.disconnect();
-  }, []);
-};
 

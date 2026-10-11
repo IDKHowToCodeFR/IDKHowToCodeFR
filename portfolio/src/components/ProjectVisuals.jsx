@@ -40,7 +40,7 @@ const TelemetryVisualizer = ({
       </div>
 
       {/* Top telemetry bar */}
-      <div className="relative z-10 border-b border-white/5 bg-black/40 backdrop-blur-md px-4 py-3 flex justify-between items-center text-white/40 uppercase tracking-[0.2em] font-bold text-[9px] shrink-0 rounded-t-2xl">
+      <div className="relative z-10 border-b border-white/5 bg-black/40 backdrop-blur-md px-4 py-3 flex justify-between items-center text-white/70 uppercase tracking-[0.2em] font-semibold text-[11px] shrink-0 rounded-t-2xl">
         <span>{wsEndpoint}</span>
         <span className={`flex items-center gap-2 ${statusColor}`}>
           <div className={`w-1.5 h-1.5 rounded-full ${statusBg} shadow-[0_0_8px_currentColor] animate-pulse`}></div> LIVE
@@ -54,21 +54,21 @@ const TelemetryVisualizer = ({
           
           <div className="flex justify-between items-end mb-6 border-b border-white/10 pb-4">
              <div>
-               <div className="text-white/30 text-[8px] tracking-[0.2em] uppercase mb-1">{architectureTitle}</div>
+               <div className="text-white/60 text-[10px] tracking-[0.2em] uppercase mb-1 font-mono">{architectureTitle}</div>
                <div className="text-white text-sm font-semibold tracking-wide font-sans">{architectureValue}</div>
              </div>
              <div className="text-right">
-               <div className="text-white/30 text-[8px] tracking-[0.2em] uppercase mb-1">{metricTitle}</div>
-               <div className={`${statusColor} text-sm tracking-tighter`}>{metricValue}</div>
+               <div className="text-white/60 text-[10px] tracking-[0.2em] uppercase mb-1 font-mono">{metricTitle}</div>
+               <div className={`${statusColor} text-sm font-semibold tracking-tighter tabular-nums font-mono`}>{metricValue}</div>
              </div>
           </div>
 
           <div className="space-y-4">
             {labels.map((label, i) => (
               <div key={label} className="w-full">
-                <div className="flex justify-between text-[9px] mb-1.5">
-                  <span className="text-white/60 tracking-wider uppercase font-semibold">{label}</span>
-                  <span className="text-white/40">{dataValueFormatter(data[i])}</span>
+                <div className="flex justify-between text-[11px] mb-1.5">
+                  <span className="text-white/80 tracking-wider uppercase font-semibold">{label}</span>
+                  <span className="text-white/60 font-mono tabular-nums">{dataValueFormatter(data[i])}</span>
                 </div>
                 <div className="w-full h-1 bg-white/5 rounded-full overflow-hidden">
                   <div 
@@ -81,12 +81,12 @@ const TelemetryVisualizer = ({
           </div>
 
           <div className="mt-6 pt-4 border-t border-white/5">
-             <div className="text-white/30 text-[8px] tracking-[0.2em] uppercase mb-2">{logTitle}</div>
+             <div className="text-white/60 text-[10px] tracking-[0.2em] uppercase mb-2 font-mono">{logTitle}</div>
              <div className="h-12 overflow-hidden relative flex flex-col justify-end">
                {logs.map((log, i) => (
                  <div 
                    key={log.id} 
-                   className={`text-[9px] leading-loose truncate transition-[opacity,transform,color] duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] starting:opacity-0 starting:-translate-y-2 translate-y-0 ${i === 0 ? 'text-white/90 opacity-100' : i === 1 ? 'text-white/50 opacity-100' : 'text-white/20 opacity-100'}`}
+                   className={`text-[11px] leading-loose truncate transition-[opacity,transform,color] duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] starting:opacity-0 starting:-translate-y-2 translate-y-0 ${i === 0 ? 'text-white/90 opacity-100 font-medium' : i === 1 ? 'text-white/60 opacity-100' : 'text-white/40 opacity-100'}`}
                  >
                    {log.text}
                  </div>

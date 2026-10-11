@@ -1,10 +1,15 @@
 import React from 'react';
-import { useReveal, PremiumCard } from '../components/UI';
+import useReveal from '../hooks/useReveal';
 import aadhaarLogo from '../assets/aadhaar-logo.png';
 import { PORTFOLIO_CONTENT } from '../content';
 
 const logos = {
   'aadhaar-logo.png': aadhaarLogo
+};
+
+const DOT_COLORS = {
+  'emerald-400': 'bg-emerald-400',
+  'cyan-400': 'bg-cyan-400',
 };
 
 export default function Experience() {
@@ -52,7 +57,7 @@ export default function Experience() {
             {internship.projects.map((proj, pIdx) => (
             <div key={pIdx} className="bg-white/5 border border-white/10 rounded-3xl p-6 md:p-8 hover:bg-white/10 transition-colors">
               <h4 className="text-lg font-medium text-white mb-6 flex items-center gap-4">
-                <span className={`w-2 h-2 rounded-full bg-${proj.color}`}></span>
+                <span className={`w-2 h-2 rounded-full ${DOT_COLORS[proj.color] || 'bg-emerald-400'}`}></span>
                 {proj.title}
               </h4>
               <ul className="flex flex-col gap-4 text-white/60 font-light leading-relaxed">

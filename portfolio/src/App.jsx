@@ -7,12 +7,32 @@ import Experience from './pages/Experience';
 import Resume from './pages/Resume';
 import Footer from './components/Footer';
 
-function ScrollToTop() {
+const PAGE_TITLES = {
+  '/': 'Rachit Mangawa — Systems & AI Engineer',
+  '/experience': 'Experience — Rachit Mangawa',
+  '/projects': 'Projects & Systems — Rachit Mangawa',
+  '/resume': 'Resume — Rachit Mangawa',
+};
+
+function PageManager() {
   const { pathname } = useLocation();
   useEffect(() => {
     window.scrollTo(0, 0);
+    document.title = PAGE_TITLES[pathname] || 'Rachit Mangawa';
   }, [pathname]);
   return null;
+}
+
+function NotFound() {
+  return (
+    <main className="min-h-[70vh] flex flex-col items-center justify-center text-center px-6 pt-32">
+      <h1 className="font-serif text-7xl md:text-9xl font-medium tracking-tighter text-white mb-4">404</h1>
+      <p className="text-white/60 text-lg mb-8">Page not found.</p>
+      <Link to="/" className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white px-6 py-3 rounded-full text-xs uppercase tracking-widest font-medium transition-colors">
+        Return Home &rarr;
+      </Link>
+    </main>
+  );
 }
 
 function App() {
@@ -20,18 +40,25 @@ function App() {
   const lastScrollY = useRef(0);
 
   useEffect(() => {
+    let ticking = false;
     const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      if (navRef.current) {
-        if (currentScrollY > lastScrollY.current && currentScrollY > 50) {
-          navRef.current.classList.add('opacity-0', '-translate-y-8', 'pointer-events-none');
-          navRef.current.classList.remove('opacity-100', 'translate-y-0');
-        } else {
-          navRef.current.classList.add('opacity-100', 'translate-y-0');
-          navRef.current.classList.remove('opacity-0', '-translate-y-8', 'pointer-events-none');
-        }
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const currentScrollY = window.scrollY;
+          if (navRef.current) {
+            if (currentScrollY > lastScrollY.current && currentScrollY > 50) {
+              navRef.current.classList.add('opacity-0', '-translate-y-8', 'pointer-events-none');
+              navRef.current.classList.remove('opacity-100', 'translate-y-0');
+            } else {
+              navRef.current.classList.add('opacity-100', 'translate-y-0');
+              navRef.current.classList.remove('opacity-0', '-translate-y-8', 'pointer-events-none');
+            }
+          }
+          lastScrollY.current = currentScrollY;
+          ticking = false;
+        });
+        ticking = true;
       }
-      lastScrollY.current = currentScrollY;
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
@@ -40,13 +67,14 @@ function App() {
 
   return (
     <HashRouter>
-      <ScrollToTop />
+      <PageManager />
       <div className="relative selection:bg-white/20 min-h-screen text-white overflow-x-hidden font-sans">
         <div className="fixed inset-0 radial-glow pointer-events-none z-0"></div>
         <div className="noise-overlay z-50"></div>
 
         <nav 
           ref={navRef}
+          aria-label="Primary navigation"
           className="fixed top-6 left-1/2 -translate-x-1/2 z-50 bg-white/5 backdrop-blur-2xl ring-1 ring-white/10 px-8 py-4 rounded-full flex items-center gap-6 md:gap-8 transition-[transform,opacity,background-color] duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] opacity-100 translate-y-0"
         >
           <Link to="/" className="text-xs font-medium uppercase tracking-widest text-white/70 hover:text-white transition-colors">Home</Link>
@@ -60,7 +88,7 @@ function App() {
           <Route path="/experience" element={<Experience />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/resume" element={<Resume />} />
-
+          <Route path="*" element={<NotFound />} />
         </Routes>
 
         <Footer />
@@ -70,3 +98,4 @@ function App() {
 }
 
 export default App;
+
