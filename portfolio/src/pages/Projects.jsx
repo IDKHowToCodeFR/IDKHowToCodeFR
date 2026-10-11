@@ -24,22 +24,47 @@ export default function Projects() {
   const projects = data.projects;
   return (
     <main className="relative z-10 w-full overflow-hidden">
-      {/* Hero section */}
-      <section className="relative pt-36 md:pt-48 pb-20 md:pb-28 px-6 md:px-12 w-full max-w-7xl mx-auto">
-        <h1 className="reveal font-serif text-[14vw] md:text-[10vw] lg:text-[9.5vw] leading-[0.96] font-normal tracking-tight text-white mb-10 md:mb-12 pb-2 text-balance">
-          Architecture
-          <span className="block mt-1.5 md:mt-2.5 italic">
-            & Code<span className="text-white/40 not-italic">.</span>
-          </span>
-        </h1>
+      {/* Hero Section - Centered 2-Column Split matching Dashboard */}
+      <section className="relative min-h-dvh flex flex-col justify-center w-full max-w-7xl mx-auto px-6 md:px-12 pt-32 pb-24">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-12 w-full reveal">
 
-        <div className="reveal reveal-delay-1 text-lg md:text-xl lg:text-[1.35rem] font-light text-white/70 leading-[1.7] md:leading-[1.75] tracking-tight max-w-5xl lg:max-w-6xl text-pretty space-y-4 md:space-y-6">
-          <p>
-            Developing <span className="text-white font-medium underline decoration-white/20 underline-offset-4 decoration-1 hover:decoration-white/50 transition-colors">zero-dependency C++ code generators</span>, real-time streaming architectures, and <span className="text-white font-medium underline decoration-white/20 underline-offset-4 decoration-1 hover:decoration-white/50 transition-colors">vector semantic classifiers</span>.
-          </p>
-          <p>
-            From compiling scikit-learn models for bare-metal execution on <span className="text-white font-medium underline decoration-white/20 underline-offset-4 decoration-1 hover:decoration-white/50 transition-colors">ESP32 microcontrollers</span> to fixing numerical gradient singularities deep inside <span className="text-white font-medium underline decoration-white/20 underline-offset-4 decoration-1 hover:decoration-white/50 transition-colors">TensorFlow Core</span> autodiff engines.
-          </p>
+          {/* Left Column (Headline + Architecture Overview) */}
+          <div className="lg:col-span-8 flex flex-col justify-start">
+            <h1 className="reveal font-serif text-[14vw] md:text-[9vw] leading-[0.96] font-normal tracking-tight text-white mb-8 pb-2">
+              Architecture
+              <span className="block mt-1.5 md:mt-2.5 italic">
+                & Code<span className="text-white/40 not-italic">.</span>
+              </span>
+            </h1>
+
+            <div className="reveal reveal-delay-1 text-lg md:text-xl lg:text-2xl font-light text-white/70 leading-[1.6] tracking-tight text-left space-y-4">
+              <p>
+                Developing <span className="text-white font-medium underline decoration-white/20 underline-offset-4 decoration-1 hover:decoration-white/50 transition-colors">zero-dependency C++ code generators</span>, real-time streaming architectures, and <span className="text-white font-medium underline decoration-white/20 underline-offset-4 decoration-1 hover:decoration-white/50 transition-colors">vector semantic classifiers</span>.
+              </p>
+              <p>
+                From compiling scikit-learn models for bare-metal execution on <span className="text-white font-medium underline decoration-white/20 underline-offset-4 decoration-1 hover:decoration-white/50 transition-colors">ESP32 microcontrollers</span> to fixing numerical gradient singularities deep inside <span className="text-white font-medium underline decoration-white/20 underline-offset-4 decoration-1 hover:decoration-white/50 transition-colors">TensorFlow Core</span> autodiff engines.
+              </p>
+            </div>
+          </div>
+
+          {/* Right Column (Architecture & Tooling Specs) */}
+          <div className="lg:col-span-4 flex flex-col gap-3">
+            {[
+              { label: "Embedded Code Generator", value: "HeartFlow OS (ESP32 C++)" },
+              { label: "Semantic Classifier", value: "MiniLM + SVM Pipeline" },
+              { label: "Core Contribution", value: "TensorFlow Autodiff Core" },
+              { label: "Embedded Toolchain", value: "PlatformIO & Scikit-Learn" },
+              { label: "Streaming Transport", value: "WebSockets & Async I/O" },
+            ].map((item, idx) => (
+              <div key={idx} className="group flex items-center justify-between p-4 md:p-5 bg-white/2 border border-white/10 rounded-2xl hover:bg-white/5 hover:border-white/20 transition-all duration-300 reveal" style={{ animationDelay: `${idx * 50 + 200}ms` }}>
+                <div className="flex flex-col">
+                  <span className="text-white/50 text-xs uppercase tracking-[0.2em] font-bold mb-1.5">{item.label}</span>
+                  <span className="text-white/90 text-sm md:text-base font-medium transition-transform duration-300 group-hover:translate-x-1">{item.value}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+
         </div>
       </section>
 
