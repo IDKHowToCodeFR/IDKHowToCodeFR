@@ -24,14 +24,21 @@ export default function Projects() {
   const projects = data.projects;
   return (
     <main className="relative z-10 w-full overflow-hidden">
-      {/* Intro section */}
-      <section className="relative pt-40 pb-20 px-6 md:px-12 w-full max-w-7xl mx-auto">
-        <div className="reveal">
-          <h1 className="font-serif text-5xl md:text-8xl font-medium tracking-tighter text-white mb-8">
-            Architecture <br/><span className="text-white/50">& Code</span>
-          </h1>
-          <p className="text-lg md:text-xl text-white/60 max-w-2xl font-light leading-relaxed">
-            The systems and tools I've built, and the decisions behind them.
+      {/* Hero section */}
+      <section className="relative pt-36 md:pt-48 pb-20 md:pb-28 px-6 md:px-12 w-full max-w-7xl mx-auto">
+        <h1 className="reveal font-serif text-[14vw] md:text-[10vw] lg:text-[9.5vw] leading-[0.96] font-normal tracking-tight text-white mb-10 md:mb-12 pb-2 text-balance">
+          Architecture
+          <span className="block mt-1.5 md:mt-2.5 italic">
+            & Code<span className="text-white/40 not-italic">.</span>
+          </span>
+        </h1>
+
+        <div className="reveal reveal-delay-1 text-lg md:text-xl lg:text-[1.35rem] font-light text-white/70 leading-[1.7] md:leading-[1.75] tracking-tight max-w-5xl lg:max-w-6xl text-pretty space-y-4 md:space-y-6">
+          <p>
+            Developing <span className="text-white font-medium underline decoration-white/20 underline-offset-4 decoration-1 hover:decoration-white/50 transition-colors">zero-dependency C++ code generators</span>, real-time streaming architectures, and <span className="text-white font-medium underline decoration-white/20 underline-offset-4 decoration-1 hover:decoration-white/50 transition-colors">vector semantic classifiers</span>.
+          </p>
+          <p>
+            From compiling scikit-learn models for bare-metal execution on <span className="text-white font-medium underline decoration-white/20 underline-offset-4 decoration-1 hover:decoration-white/50 transition-colors">ESP32 microcontrollers</span> to fixing numerical gradient singularities deep inside <span className="text-white font-medium underline decoration-white/20 underline-offset-4 decoration-1 hover:decoration-white/50 transition-colors">TensorFlow Core</span> autodiff engines.
           </p>
         </div>
       </section>
@@ -48,7 +55,7 @@ export default function Projects() {
                   
                   {/* Left/Text Column */}
                   <div className="w-full lg:w-1/2 flex flex-col items-start">
-                    <span className="text-emerald-400 font-mono text-sm mb-4 block tracking-wider">0{idx + 1} // {project.id.toUpperCase()}</span>
+                    <span className="text-emerald-400 font-mono text-xs uppercase tracking-[0.2em] mb-4 block">Project 0{idx + 1}</span>
                     <h2 className="font-serif text-4xl md:text-5xl font-medium tracking-tight text-white mb-6">{project.title}</h2>
                     
                     <div className="flex flex-wrap gap-2 mb-8">

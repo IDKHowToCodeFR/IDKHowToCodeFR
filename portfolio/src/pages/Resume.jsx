@@ -7,17 +7,42 @@ export default function Resume() {
   const pdfUrl = `${import.meta.env.BASE_URL}resume.pdf`;
 
   return (
-    <main className="relative z-10 w-full min-h-screen pt-40 pb-32 overflow-hidden flex flex-col items-center">
+    <main className="relative z-10 w-full min-h-screen overflow-hidden">
 
-      <div className="w-full max-w-5xl mx-auto px-6 md:px-12 mb-12 text-center reveal">
-        <h1 className="font-serif text-4xl md:text-6xl font-medium tracking-tight mb-4">Interactive Resume</h1>
-        <p className="text-white/50 text-lg">A detailed view of my professional experience and background.</p>
-      </div>
+      {/* Hero section */}
+      <section className="relative pt-36 md:pt-48 pb-16 px-6 md:px-12 w-full max-w-7xl mx-auto">
+        <h1 className="reveal font-serif text-[14vw] md:text-[10vw] lg:text-[9.5vw] leading-[0.96] font-normal tracking-tight text-white mb-10 md:mb-12 pb-2 text-balance">
+          Curriculum
+          <span className="block mt-1.5 md:mt-2.5 italic">
+            Vitae<span className="text-white/40 not-italic">.</span>
+          </span>
+        </h1>
 
-      <div className="w-full max-w-5xl mx-auto px-6 md:px-12 reveal reveal-delay-1 flex flex-col items-center">
+        <div className="reveal reveal-delay-1 text-lg md:text-xl lg:text-[1.35rem] font-light text-white/70 leading-[1.7] md:leading-[1.75] tracking-tight max-w-5xl lg:max-w-6xl text-pretty mb-12">
+          Undergraduate in Computer Science & AI at <span className="text-white font-medium underline decoration-white/20 underline-offset-4 decoration-1 hover:decoration-white/50 transition-colors">NSUT Delhi</span>, featuring production work at <span className="text-white font-medium underline decoration-white/20 underline-offset-4 decoration-1 hover:decoration-white/50 transition-colors">UIDAI (Aadhaar)</span>, numerical autodiff fixes in <span className="text-white font-medium underline decoration-white/20 underline-offset-4 decoration-1 hover:decoration-white/50 transition-colors">TensorFlow</span>, and a top-0.8% <span className="text-white font-medium underline decoration-white/20 underline-offset-4 decoration-1 hover:decoration-white/50 transition-colors">LeetCode Knight</span> rating.
+        </div>
 
+        {/* Download Button */}
+        <div className="reveal reveal-delay-2">
+          <a
+            href={pdfUrl}
+            download="Rachit_Mangawa_Resume.pdf"
+            target="_blank"
+            rel="noreferrer"
+            className="group inline-flex items-center justify-center gap-4 bg-white text-black hover:bg-white/95 rounded-full px-8 py-4 transition-[transform,background-color] duration-300 hover:scale-[1.02] active:scale-[0.97]"
+          >
+            <span className="text-sm font-bold tracking-widest uppercase">Download PDF</span>
+            <div className="w-8 h-8 rounded-full bg-black/10 flex items-center justify-center ml-2 transition-transform duration-300 ease-[cubic-bezier(0.34,1.56,0.64,1)] group-hover:scale-115">
+              <DownloadSimple weight="bold" size={14} aria-hidden="true" />
+            </div>
+          </a>
+        </div>
+      </section>
+
+      {/* PDF Viewer Container */}
+      <section className="w-full max-w-7xl mx-auto px-6 md:px-12 pb-32">
         {/* PDF Viewer Container - Hidden on mobile where object tags fail */}
-        <div className="hidden md:block w-full h-[70vh] md:h-[85vh] bg-white/5 ring-1 ring-white/10 rounded-4xl overflow-hidden p-2 mb-12">
+        <div className="hidden md:block w-full h-[75vh] md:h-[90vh] bg-white/5 ring-1 ring-white/10 rounded-4xl overflow-hidden p-2 reveal reveal-delay-2">
           <div className="w-full h-full rounded-3xl overflow-hidden bg-black/50">
             <object
               data={pdfUrl}
@@ -25,23 +50,12 @@ export default function Resume() {
               className="w-full h-full"
             >
               <div className="flex items-center justify-center h-full w-full bg-black/50 text-white/50">
-                <p>Your browser does not support embedded PDFs. Please download the file below.</p>
+                <p>Your browser does not support embedded PDFs. Please download the file above.</p>
               </div>
             </object>
           </div>
         </div>
-
-        {/* Download Button */}
-        <div className="reveal reveal-delay-2">
-          <a href={pdfUrl} download="Rachit_Mangawa_Resume.pdf" target="_blank" rel="noreferrer" className="group inline-flex items-center justify-center gap-4 bg-white text-black hover:bg-white/90 rounded-full px-8 py-4 transition-[transform,background-color] duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] active:duration-150 active:scale-[0.97]">
-            <span className="text-sm font-bold tracking-widest uppercase">Download PDF</span>
-            <div className="w-8 h-8 rounded-full bg-black/10 flex items-center justify-center ml-2 group-hover:translate-x-1 group-hover:-translate-y-0.5 transition-transform duration-700 ease-[cubic-bezier(0.32,0.72,0,1)]">
-              <DownloadSimple weight="bold" size={14} aria-hidden="true" />
-            </div>
-          </a>
-        </div>
-
-      </div>
+      </section>
 
     </main>
   );

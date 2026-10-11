@@ -10,6 +10,10 @@ export const PORTFOLIO_CONTENT = {
     linkedinHandle: "rachit-mangawa",
     github: "https://github.com/IDKHowToCodeFR",
     githubHandle: "IDKHowToCodeFR",
+    kaggle: "https://www.kaggle.com/rachitmangawa",
+    kaggleHandle: "rachitmangawa",
+    huggingface: "https://huggingface.co/IDKHowToCodeFr",
+    huggingfaceHandle: "IDKHowToCodeFr",
     location: "NSUT, New Delhi, India"
   },
   bio: {
@@ -17,7 +21,7 @@ export const PORTFOLIO_CONTENT = {
       <>
         Systems engineer architecting <span className="text-white font-medium underline decoration-white/20 underline-offset-4 decoration-1">high-concurrency distributed backends</span> and <span className="text-white font-medium underline decoration-white/20 underline-offset-4 decoration-1">edge AI platforms</span>.
         <br /><br />
-        Writing C++ and Python to ship RAG pipelines, agentic workflows, and <span className="text-white font-medium underline decoration-white/20 underline-offset-4 decoration-1">hardware-accelerated telemetry systems</span>.
+        Writing C++ and Python to ship RAG pipelines, agentic workflows, and <span className="text-white font-medium underline decoration-white/20 underline-offset-4 decoration-1">low-latency distributed systems</span>.
       </>
     )
   },
@@ -77,7 +81,7 @@ export const PORTFOLIO_CONTENT = {
           title: "Offline OCR & LLM Grievance Processing System",
           points: [
             <React.Fragment key="1">Built fully <strong className="text-white/90 font-medium">offline</strong> grievance-letter pipeline for scanned PDFs in <strong className="text-white/90 font-medium">12 languages</strong>: <strong className="text-white/90 font-medium">OpenCV</strong> preprocessing (Otsu, deskew, CLAHE) → <strong className="text-white/90 font-medium">Tesseract</strong> OCR → <strong className="text-white/90 font-medium">Ollama</strong> (gemma3:4b) → schema-strict <strong className="text-white/90 font-medium">JSON</strong>.</React.Fragment>,
-            <React.Fragment key="2">Optimized for <strong className="text-white/90 font-medium">8GB CPU-only</strong> hardware: disk-streamed uploads, LLM <strong className="text-white/90 font-medium">boundary detection</strong> to split multi-letter bundles, degraded-page flagging, and malformed-output fallback; <strong className="text-white/90 font-medium">1–2 min/letter</strong>.</React.Fragment>,
+            <React.Fragment key="2">Optimized for <strong className="text-white/90 font-medium">8GB CPU-only</strong> hardware: disk-streamed uploads, LLM <strong className="text-white/90 font-medium">boundary detection</strong> to split multi-letter bundles, degraded-page flagging, and malformed-output fallback; <strong className="text-white/90 font-medium">1-2 min/letter</strong>.</React.Fragment>,
             <React.Fragment key="3">Shipped <strong className="text-white/90 font-medium">HTML/JS review UI</strong> with side-by-side scan and summary, <strong className="text-white/90 font-medium">confidence scores</strong>, and urgency/type filters for officer triage.</React.Fragment>
           ]
         },
@@ -86,7 +90,7 @@ export const PORTFOLIO_CONTENT = {
           title: "Contact Center Operations & Analytics Platform",
           points: [
             <React.Fragment key="1">Built <strong className="text-white/90 font-medium">Dash + FastAPI + Pandas</strong> platform unifying <strong className="text-white/90 font-medium">4 data sources</strong> across <strong className="text-white/90 font-medium">2 vendors</strong>, replacing manual Excel reporting; auto-computes SL, AHT, avg hold against strict SLA targets.</React.Fragment>,
-            <React.Fragment key="2">Designed <strong className="text-white/90 font-medium">async ETL</strong> with <strong className="text-white/90 font-medium">WebSocket</strong> progress and stateless parsers: ingests <strong className="text-white/90 font-medium">50MB / 100K+ row</strong> workbooks in 5–15s via 1,000-row batches and idempotent upserts; APScheduler 3-min auto-ingest on <strong className="text-white/90 font-medium">SQLite WAL</strong>.</React.Fragment>,
+            <React.Fragment key="2">Designed <strong className="text-white/90 font-medium">async ETL</strong> with <strong className="text-white/90 font-medium">WebSocket</strong> progress and stateless parsers: ingests <strong className="text-white/90 font-medium">50MB / 100K+ row</strong> workbooks in 5-15s via 1,000-row batches and idempotent upserts; APScheduler 3-min auto-ingest on <strong className="text-white/90 font-medium">SQLite WAL</strong>.</React.Fragment>,
             <React.Fragment key="3">Secured with <strong className="text-white/90 font-medium">JWT RBAC</strong>, tenant isolation, X-Forwarded-For audit logs, bcrypt lazy rehash, and 90-day log pruning; architected for <strong className="text-white/90 font-medium">1,000+ users</strong>.</React.Fragment>
           ]
         }
@@ -97,10 +101,10 @@ export const PORTFOLIO_CONTENT = {
     {
       id: "heartflow",
       title: "HeartFlow OS",
-      description: "ML platform that exports Python models to optimized C++ for microcontrollers, with a live telemetry dashboard.",
+      description: "ML platform exporting trained Python models to optimized C++ for microcontrollers, with a real-time monitoring dashboard.",
       tech: ["Next.js 16", "React 19", "FastAPI", "Python 3.10", "PlatformIO", "WebSockets"],
       deepDive: [
-        <React.Fragment key="1">Engineered a <span className="text-white font-medium pb-px border-b border-emerald-500/40">fault-tolerant telemetry dashboard</span> for live cardiovascular monitoring via WebSockets.</React.Fragment>,
+        <React.Fragment key="1">Engineered a <span className="text-white font-medium pb-px border-b border-emerald-500/40">real-time monitoring dashboard</span> for live cardiovascular signals via WebSockets.</React.Fragment>,
         <React.Fragment key="2">Built an MLOps pipeline for <span className="text-white font-medium pb-px border-b border-emerald-500/40">background retraining and model hot-swapping</span> without inference downtime.</React.Fragment>,
         <React.Fragment key="3">Wrote an exporter that transpiles Scikit-Learn soft-voting ensembles into <span className="text-white font-medium pb-px border-b border-emerald-500/40">zero-dependency C++</span> for ESP32 microcontrollers.</React.Fragment>
       ],

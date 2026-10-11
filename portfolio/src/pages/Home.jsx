@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { SectionLink } from '../components/UI';
 import useReveal from '../hooks/useReveal';
 import { Info, GitPullRequest } from "@phosphor-icons/react";
 import aadhaarLogo from '../assets/aadhaar-logo.png';
@@ -20,15 +21,15 @@ export default function Home() {
 
           {/* Left Column (Name + Bio) */}
           <div className="lg:col-span-8 flex flex-col justify-start">
-            <h1 className="font-serif text-[14vw] md:text-[9vw] leading-[0.88] font-normal tracking-tight text-white mb-8 pb-2">
+            <h1 className="reveal font-serif text-[14vw] md:text-[9vw] leading-[0.88] font-normal tracking-tight text-white mb-8 pb-2">
               {data.personal.name.split(' ')[0]}<br />
               <span className="italic">{data.personal.name.split(' ')[1]}</span>
               <span className="text-white/40 not-italic">.</span>
             </h1>
 
-            <p className="text-lg md:text-xl lg:text-2xl font-light text-white/70 leading-[1.6] tracking-tight text-left">
+            <div className="reveal reveal-delay-1 text-lg md:text-xl lg:text-2xl font-light text-white/70 leading-[1.6] tracking-tight text-left">
               {data.bio.content}
-            </p>
+            </div>
           </div>
 
           {/* Tech Stack Stack (Right Column) */}
@@ -51,7 +52,7 @@ export default function Home() {
       <section id="experience" className="mt-16 mb-32 w-full max-w-7xl mx-auto px-6 md:px-12">
         <div className="flex items-end justify-between mb-16 reveal">
           <h2 className="font-serif text-4xl md:text-5xl font-medium tracking-tight text-white">Experience</h2>
-          <Link to="/experience" className="text-sm font-medium tracking-widest uppercase text-white/50 hover:text-white transition-colors pb-2">View All &rarr;</Link>
+          <SectionLink to="/experience">View All</SectionLink>
         </div>
 
         <div className="ml-6 md:ml-7 border-l border-white/10 flex flex-col gap-24">
@@ -91,14 +92,14 @@ export default function Home() {
       <section className="mb-32 w-full max-w-7xl mx-auto px-6 md:px-12">
         <div className="flex items-end justify-between mb-16 reveal">
           <h2 className="font-serif text-4xl md:text-5xl font-medium tracking-tight text-white">Featured Work</h2>
-          <Link to="/projects" className="text-sm font-medium tracking-widest uppercase text-white/50 hover:text-white transition-colors pb-2">View All &rarr;</Link>
+          <SectionLink to="/projects">View All</SectionLink>
         </div>
 
         <div className="ml-6 md:ml-7 border-l border-white/10 flex flex-col gap-8 md:gap-12">
           {[
             {
               title: "HeartFlow OS",
-              description: "ML platform that exports Python models to optimized C++ for microcontrollers, with a live telemetry dashboard.",
+              description: "ML platform exporting trained Python models to optimized C++ for microcontrollers, with a real-time monitoring dashboard.",
               tech: ['Next.js', 'React', 'FastAPI', 'Python', 'WebSockets'],
               link: "/projects#heartflow"
             },
@@ -140,7 +141,7 @@ export default function Home() {
 
         <div className="grid md:grid-cols-2 gap-8 reveal reveal-delay-1">
           {/* Competitive Programming */}
-          <div className="p-8 bg-white/5 border border-white/10 rounded-3xl hover:bg-white/10 transition-colors">
+          <div className="p-6 md:p-8 bg-white/5 border border-white/10 rounded-3xl hover:bg-white/10 transition-colors">
             <h3 className="font-serif text-xl font-medium text-white mb-6">Competitive Programming</h3>
             <ul className="flex flex-col gap-4 text-white/60 font-light">
               <li className="flex justify-between items-center border-b border-white/5 pb-4">
@@ -190,7 +191,7 @@ export default function Home() {
           </div>
 
           {/* Open Source */}
-          <div className="p-8 bg-white/5 border border-white/10 rounded-3xl hover:bg-white/10 transition-colors">
+          <div className="p-6 md:p-8 bg-white/5 border border-white/10 rounded-3xl hover:bg-white/10 transition-colors">
             <h3 className="font-serif text-xl font-medium text-white mb-6">Open Source</h3>
             <div className="flex flex-col gap-4 text-white/60 font-light">
               <div>

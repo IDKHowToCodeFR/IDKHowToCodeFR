@@ -18,14 +18,21 @@ export default function Experience() {
 
   return (
     <main className="relative z-10 w-full overflow-hidden min-h-screen">
-      {/* Intro section */}
-      <section className="relative pt-40 pb-20 px-6 md:px-12 w-full max-w-7xl mx-auto">
-        <div className="reveal">
-          <h1 className="font-serif text-5xl md:text-8xl font-medium tracking-tighter text-white mb-8">
-            Experience <br/><span className="text-white/50">& Impact</span>
-          </h1>
-          <p className="text-lg md:text-xl text-white/60 max-w-2xl font-light leading-relaxed">
-            What I built, what it replaced, and what shipped.
+      {/* Hero section */}
+      <section className="relative pt-36 md:pt-48 pb-20 md:pb-28 px-6 md:px-12 w-full max-w-7xl mx-auto">
+        <h1 className="reveal font-serif text-[14vw] md:text-[10vw] lg:text-[9.5vw] leading-[0.96] font-normal tracking-tight text-white mb-10 md:mb-12 pb-2 text-balance">
+          Experience
+          <span className="block mt-1.5 md:mt-2.5 italic">
+            & Impact<span className="text-white/40 not-italic">.</span>
+          </span>
+        </h1>
+
+        <div className="reveal reveal-delay-1 text-lg md:text-xl lg:text-[1.35rem] font-light text-white/70 leading-[1.7] md:leading-[1.75] tracking-tight max-w-5xl lg:max-w-6xl text-pretty space-y-4 md:space-y-6">
+          <p>
+            Engineering <span className="text-white font-medium underline decoration-white/20 underline-offset-4 decoration-1 hover:decoration-white/50 transition-colors">high-throughput distributed backends</span>, air-gapped document processing pipelines, and resilient operational platforms.
+          </p>
+          <p>
+            Built systems at <span className="text-white font-medium underline decoration-white/20 underline-offset-4 decoration-1 hover:decoration-white/50 transition-colors">UIDAI (Aadhaar)</span> deployed to 1,000+ internal staff, replacing manual processes with automated ETL and <span className="text-white font-medium underline decoration-white/20 underline-offset-4 decoration-1 hover:decoration-white/50 transition-colors">offline multimodal intelligence</span> across 12 regional languages.
           </p>
         </div>
       </section>

@@ -22,14 +22,37 @@ const TelemetryVisualizer = ({
 }) => {
   const [data, setData] = useState(initialData);
   const [logs, setLogs] = useState([]);
+  const [isPaused, setIsPaused] = useState(false);
+  const [statusOverride, setStatusOverride] = useState(null);
 
   useEffect(() => {
+    if (isPaused) return;
     const interval = setInterval(() => {
       setData(prev => prev.map(dataUpdater));
       setLogs(prev => [logGenerator(), ...prev].slice(0, 4));
     }, updateInterval);
     return () => clearInterval(interval);
-  }, [dataUpdater, logGenerator, updateInterval]);
+  }, [dataUpdater, logGenerator, updateInterval, isPaused]);
+
+  const triggerBenchmark = () => {
+    setStatusOverride('TESTING');
+    setData(prev => prev.map(() => Math.min(0.96, 0.82 + Math.random() * 0.15)));
+    setLogs(prev => [
+      { id: Date.now(), text: `> BENCHMARK: INT8 batch 64 -> latency 1.12ms (converged)` },
+      ...prev
+    ].slice(0, 4));
+    setTimeout(() => setStatusOverride(null), 1200);
+  };
+
+  const triggerFault = () => {
+    setStatusOverride('FAULT_SIM');
+    setData(prev => prev.map(() => 0.25 + Math.random() * 0.2));
+    setLogs(prev => [
+      { id: Date.now(), text: `> WARN [RECOVERY]: Ingest jitter spike -> fallback handler OK` },
+      ...prev
+    ].slice(0, 4));
+    setTimeout(() => setStatusOverride(null), 1400);
+  };
 
   return (
     <div className="relative w-full h-full min-h-100 flex flex-col bg-[#050505] rounded-2xl border border-white/10 overflow-hidden font-mono group">
@@ -40,11 +63,39 @@ const TelemetryVisualizer = ({
       </div>
 
       {/* Top telemetry bar */}
-      <div className="relative z-10 border-b border-white/5 bg-black/40 backdrop-blur-md px-4 py-3 flex justify-between items-center text-white/70 uppercase tracking-[0.2em] font-semibold text-[11px] shrink-0 rounded-t-2xl">
-        <span>{wsEndpoint}</span>
-        <span className={`flex items-center gap-2 ${statusColor}`}>
-          <div className={`w-1.5 h-1.5 rounded-full ${statusBg} shadow-[0_0_8px_currentColor] animate-pulse`}></div> LIVE
-        </span>
+      <div className="relative z-10 border-b border-white/5 bg-black/50 backdrop-blur-md px-4 py-3 flex flex-wrap gap-2 justify-between items-center text-white/70 uppercase tracking-[0.2em] font-semibold text-[11px] shrink-0 rounded-t-2xl">
+        <div className="flex items-center gap-3">
+          <span className="font-mono text-[10px] md:text-[11px]">{wsEndpoint}</span>
+          <span className={`flex items-center gap-1.5 ${statusOverride ? 'text-amber-400' : statusColor}`}>
+            <span className={`w-1.5 h-1.5 rounded-full ${statusOverride ? 'bg-amber-400' : statusBg} shadow-[0_0_8px_currentColor] animate-pulse`}></span>
+            {statusOverride || 'LIVE'}
+          </span>
+        </div>
+
+        {/* Interactive Operator Controls */}
+        <div className="flex items-center gap-1.5">
+          <button
+            onClick={() => setIsPaused(p => !p)}
+            className="px-2 py-0.5 rounded text-[9px] font-mono border border-white/10 hover:border-white/30 text-white/60 hover:text-white transition-all active:scale-95 cursor-pointer"
+            title={isPaused ? "Resume stream" : "Pause stream"}
+          >
+            {isPaused ? "▶ RESUME" : "⏸ PAUSE"}
+          </button>
+          <button
+            onClick={triggerBenchmark}
+            className="px-2 py-0.5 rounded text-[9px] font-mono bg-white/5 hover:bg-white/15 border border-white/10 hover:border-white/30 text-white/80 hover:text-white transition-all active:scale-95 cursor-pointer"
+            title="Inject test benchmark"
+          >
+            ⚡ INFER
+          </button>
+          <button
+            onClick={triggerFault}
+            className="px-2 py-0.5 rounded text-[9px] font-mono bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/20 text-amber-300 transition-all active:scale-95 cursor-pointer"
+            title="Inject edge fault simulation"
+          >
+            ⚠ FAULT
+          </button>
+        </div>
       </div>
       
       <div className="relative z-10 flex-1 flex flex-col items-center justify-center p-6 w-full h-full">
